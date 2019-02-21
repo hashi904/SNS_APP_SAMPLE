@@ -1,0 +1,74 @@
+.header{
+  height: 46px;
+  width: 100vw;
+  .header-container{
+    margin-right: 80px;
+    margin-left: 80px;
+    .header-container--global__left{
+      float: left;
+      .global__left-home{
+        display: inline-block;
+        height: 46px;
+        line-height: 26px;
+        padding: 10px;
+        .global__left-home-menu{
+          text-decoration: none;
+          color: #808080;
+          .header__fa-icon{}
+        }
+      }
+      .global__left-moment{
+        display: inline-block;
+        padding: 10px;
+        .global__left-moment-menu{
+          text-decoration: none;
+          color: #808080;
+          .header__fa-icon{}
+        }
+      }
+      .global__left-news{
+        display: inline-block;
+        padding: 10px;
+        .global__left-news-menu{
+          text-decoration: none;
+          color: #808080;
+          .header__fa-icon{}
+        }
+      }
+      .global__left-message{
+        display: inline-block;
+        padding: 10px;
+        .global__left-message-menu{
+          text-decoration: none;
+          color: #808080;
+          .header__fa-icon{}
+        }
+      }
+    }
+    .header-container--global__right{
+      float: right;
+      .global__right-search{
+        line-height: 26px;
+        display: inline-block;
+        padding: 10px;
+        .global__right-search__input{}
+      }
+      .global__right-user-menu{
+        display: inline-block;
+        padding: 10px;
+        .global__right-user-menu__link{
+          text-decoration: none;
+          color: #808080;
+        }
+      }
+      .global__right-newtweet{
+        display: inline-block;
+        padding: 10px;
+        .global__right-newtweet-menu{
+          text-decoration: none;
+          color: #808080;
+        }
+      }
+    }
+  }
+}
