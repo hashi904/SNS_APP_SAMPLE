@@ -1,0 +1,32 @@
+.header
+  .header-container
+    %ul.header-container--global__left
+      %li.global__left-home
+        = link_to "#", class: "global__left-home-menu" do
+          = fa_icon 'home',class: "header__fa-icon"
+          ホーム
+      %li.global__left-moment
+        = link_to "#", class: "global__left-moment-menu" do
+          = fa_icon 'bolt',class: "header__fa-icon"
+          モーメント
+      %li.global__left-news
+        = link_to "#", class: "global__left-news-menu" do
+          = fa_icon 'bell',class: "header__fa-icon"
+          通知
+      %li.global__left-message
+        = link_to "#", class: "global__left-message-menu" do
+          = fa_icon 'envelope',class: "header__fa-icon"
+          メッセージ
+    %ul.header-container--global__right
+      %li.global__right-search
+        %input.global__right-search__input{placeholder: "キーワード検索" }
+          = fa_icon 'search', class: "header__fa-icon"
+      %li.global__right-user-menu
+        = link_to "#" ,class: "global__right-user-menu__link" do
+          = image_tag('member_photo_noimage.png', class: 'global__right-user-menu__link-img')
+      %li.global__right-newtweet
+        = link_to "#", class: "global__right-newtweet-menu" do
+          ツイート
+
+
+
