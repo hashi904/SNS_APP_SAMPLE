@@ -1,14 +1,13 @@
 .header{
-  height: 46px;
-  width: 100vw;
+  height: 30px;
+  margin-right: 125px;
+  margin-left: 125px;
   .header-container{
-    margin-right: 80px;
-    margin-left: 80px;
     .header-container--global__left{
       float: left;
       .global__left-home{
         display: inline-block;
-        height: 46px;
+        height: 30px;
         line-height: 26px;
         padding: 10px;
         .global__left-home-menu{
@@ -50,7 +49,7 @@
       .global__right-search{
         line-height: 26px;
         display: inline-block;
-        padding: 10px;
+        padding: 8px 10px 10px 8px;
         .global__right-search__input{}
       }
       .global__right-user-menu{
@@ -59,6 +58,12 @@
         .global__right-user-menu__link{
           text-decoration: none;
           color: #808080;
+          .global__right-user-menu__link-img{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            vertical-align: middle;
+          }
         }
       }
       .global__right-newtweet{
