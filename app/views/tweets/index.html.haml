@@ -8,154 +8,37 @@
       .main-content__title
         ホーム
       .main-content-func-tweet
-        = link_to 'ここでツイートする',"#" ,class: "main-content-func-tweet__link" ,method: :get
+        = link_to "tweets/new" ,class: "main-content-func-tweet__link" do
+          = image_tag('member_photo_noimage.png', class: 'main-content-func-tweet__user-img')
+          = image_tag('tweet-banner.png', class: 'main-content-func-tweet__banner-img')
 
-      .main-content-tweet
-        .main-content-tweet-user
-          = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
-        .main-content-tweet-user-box
-          .main-content-tweet-user-box-info
-            .main-content-tweet-user-box-info-name
-              test
-            .main-content-tweet-user-box-info-username
-              @test
-            .main-content-tweet-user-box-info-time
-              1h
-          .main-content-tweet-user-box-text
-            test messages
-          .main-content-tweet-user-box-func
-            .main-content-tweet-user-box-func-message
-              = link_to "#", class: "main-content-tweet-user-box-func-message__link" do
-                = fa_icon 'comment',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-retweet
-              = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
-                = fa_icon 'retweet',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-favorite
-              = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
-                = fa_icon 'heart',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-copy
-              = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
-                = fa_icon 'upload',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-impression
-              = link_to "#", class: "main-content-tweet-user-box-func-impression__link" do
-                = fa_icon 'trash',class: "tweet__fa-icon"
-
-      .main-content-tweet
-        .main-content-tweet-user
-          = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
-        .main-content-tweet-user-box
-          .main-content-tweet-user-box-info
-            .main-content-tweet-user-box-info-name
-              test
-            .main-content-tweet-user-box-info-username
-              @test
-            .main-content-tweet-user-box-info-time
-              1h
-          .main-content-tweet-user-box-text
-            test messages
-          .main-content-tweet-user-box-func
-            .main-content-tweet-user-box-func-message
-              = link_to "#", class: "main-content-tweet-user-box-func-message__link" do
-                = fa_icon 'comment',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-retweet
-              = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
-                = fa_icon 'retweet',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-favorite
-              = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
-                = fa_icon 'heart',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-copy
-              = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
-                = fa_icon 'upload',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-impression
-              = link_to "#", class: "main-content-tweet-user-box-func-impression__link" do
-                = fa_icon 'trash',class: "tweet__fa-icon"
-
-      .main-content-tweet
-        .main-content-tweet-user
-          = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
-        .main-content-tweet-user-box
-          .main-content-tweet-user-box-info
-            .main-content-tweet-user-box-info-name
-              test
-            .main-content-tweet-user-box-info-username
-              @test
-            .main-content-tweet-user-box-info-time
-              1h
-          .main-content-tweet-user-box-text
-            test messages
-          .main-content-tweet-user-box-func
-            .main-content-tweet-user-box-func-message
-              = link_to "#", class: "main-content-tweet-user-box-func-message__link" do
-                = fa_icon 'comment',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-retweet
-              = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
-                = fa_icon 'retweet',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-favorite
-              = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
-                = fa_icon 'heart',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-copy
-              = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
-                = fa_icon 'upload',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-impression
-              = link_to "#", class: "main-content-tweet-user-box-func-impression__link" do
-                = fa_icon 'trash',class: "tweet__fa-icon"
-
-      .main-content-tweet
-        .main-content-tweet-user
-          = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
-        .main-content-tweet-user-box
-          .main-content-tweet-user-box-info
-            .main-content-tweet-user-box-info-name
-              test
-            .main-content-tweet-user-box-info-username
-              @test
-            .main-content-tweet-user-box-info-time
-              1h
-          .main-content-tweet-user-box-text
-            test messages
-          .main-content-tweet-user-box-func
-            .main-content-tweet-user-box-func-message
-              = link_to "#", class: "main-content-tweet-user-box-func-message__link" do
-                = fa_icon 'comment',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-retweet
-              = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
-                = fa_icon 'retweet',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-favorite
-              = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
-                = fa_icon 'heart',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-copy
-              = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
-                = fa_icon 'upload',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-impression
-              = link_to "#", class: "main-content-tweet-user-box-func-impression__link" do
-                = fa_icon 'trash',class: "tweet__fa-icon"
-
-      .main-content-tweet
-        .main-content-tweet-user
-          = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
-        .main-content-tweet-user-box
-          .main-content-tweet-user-box-info
-            .main-content-tweet-user-box-info-name
-              test
-            .main-content-tweet-user-box-info-username
-              @test
-            .main-content-tweet-user-box-info-time
-              1h
-          .main-content-tweet-user-box-text
-            test messages
-          .main-content-tweet-user-box-func
-            .main-content-tweet-user-box-func-message
-              = link_to "#", class: "main-content-tweet-user-box-func-message__link" do
-                = fa_icon 'comment',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-retweet
-              = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
-                = fa_icon 'retweet',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-favorite
-              = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
-                = fa_icon 'heart',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-copy
-              = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
-                = fa_icon 'upload',class: "tweet__fa-icon"
-            .main-content-tweet-user-box-func-impression
-              = link_to "#", class: "main-content-tweet-user-box-func-impression__link" do
-                = fa_icon 'trash',class: "tweet__fa-icon"
+      - @tweets.each do |tweet|
+        .main-content-tweet
+          .main-content-tweet-user
+            = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
+          .main-content-tweet-user-box
+            .main-content-tweet-user-box-info
+              .main-content-tweet-user-box-info-name
+                test
+              .main-content-tweet-user-box-info-username
+                @test・
+              .main-content-tweet-user-box-info-time
+                = distance_of_time_in_words_to_now(tweet.created_at)
+            .main-content-tweet-user-box-text
+              = tweet.text
+            .main-content-tweet-user-box-func
+              .main-content-tweet-user-box-func-message
+                = link_to "#", class: "main-content-tweet-user-box-func-message__link" do
+                  = fa_icon 'comment',class: "tweet__fa-icon"
+              .main-content-tweet-user-box-retweet
+                = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
+                  = fa_icon 'retweet',class: "tweet__fa-icon"
+              .main-content-tweet-user-box-func-favorite
+                = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
+                  = fa_icon 'heart',class: "tweet__fa-icon"
+              .main-content-tweet-user-box-func-copy
+                = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
+                  = fa_icon 'upload',class: "tweet__fa-icon"
+              .main-content-tweet-user-box-func-impression
+                = link_to "#", class: "main-content-tweet-user-box-func-impression__link" do
+                  = fa_icon 'trash',class: "tweet__fa-icon"
