@@ -1,35 +1,37 @@
-.contents.row
-  %h2 Sign up
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :image
-      %br/
-      = f.file_field :image
-    .field
-      = f.label :nickname
-      %em (12 characters maximum)
-      %br/
-      = f.text_field :nickname, autofocus: true, maxlength: "12"
-    .field
-      = f.label :username
-      %em (12 characters maximum)
-      %br/
-      = f.text_field :username, autofocus: true, maxlength: "12", value: "@"
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email
-    .field
-      = f.label :password
-      - if @validatable
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "off"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "off"
-    .actions
-      = f.submit "Sign up"
+.all-contents
+  .signup
+    .signup__title
+      アカウントの作成
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .signup-image
+        .signup-image-preview
+        = f.file_field :image, class: 'image-upload'
+
+      .signup-nickname
+        = f.label :nickname, class: 'siginup-nickname__label'
+        %em (12 characters maximum)
+        %br/
+        = f.text_field :nickname, autofocus: true, maxlength: "12",class: 'siginup-nickname__text_field'
+      .signup-username
+        = f.label :username, class: 'signup-username__label'
+        %em (12 characters maximum)
+        %br/
+        = f.text_field :username, autofocus: true, maxlength: "12", value: "@", class: 'signup-username__text_field'
+      .signup-email
+        = f.label :email, class: 'signup-email__label'
+        %br/
+        = f.email_field :email, class: 'signup-email__email_field'
+      .signup-password
+        = f.label :password, class: 'signup-password__label'
+        - if @validatable
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "off", class: 'signup-password__password_field'
+      .signup-password-confirmation
+        = f.label :password_confirmation, class: 'signup-password-confirmation__label'
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off", class: 'signup-password-confirmation__password_field'
+      .signup-submit
+        = f.submit "Sign up", class: 'signup-submit__btn'
