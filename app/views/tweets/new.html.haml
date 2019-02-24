@@ -1,7 +1,22 @@
-= form_for @tweet , url: {:action => :create} do |f|
-  = flash[:danger]
-  = f.text_area :text
-  = f.file_field :image
-  -# 画像の保持
-  = f.hidden_field :image_cache
-  = f.submit
+.tweet-all
+  .tweet-box
+    .tweet-box__title
+      ツイートする
+    = form_for @tweet , url: {:action => :create} do |f|
+      .tweet-box-main
+        .tweet-box-main-top
+          .tweet-box-main-top-user__img
+            - if current_user.image.present?
+              = image_tag(current_user.image.url, class: 'tweet-box-main-top-user__img-tag')
+            - else
+              = image_tag('member_photo_noimage.png', class: 'tweet-box-main-top-user__img-tag')
+          .tweet-box-main-top-content
+            -# = flash[:danger]
+            = f.text_area :text, class: 'tweet-box-main-top-content__text_area'
+            .tweet-box-main-top-content-preview
+        .tweet-box-main-bottom
+          = f.label :image do
+            = fa_icon 'picture-o', class: 'tweet-box-main-bottom-img'
+            = f.file_field :image, class: 'tweet-box-main-bottom__file_field'
+          .tweet-box-main-bottom__submit
+            = f.submit 'ツイート', class: 'tweet-box-main-bottom__submit-btn'
