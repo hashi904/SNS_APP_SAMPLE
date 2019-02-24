@@ -1,18 +1,18 @@
 .right-side-trend{
   width: 290px;
   margin-right: 125px;
-  background-color: #FFFFFF;
+  background-color: $white;
   margin-top: 10px;
-  .right-side-trend-top{
+  &-top{
     clear: both;
-    .right-side-trend-top__setting{
+    &__setting{
       float: right;
       .right-sidebar__fa-icon{
-        color: #1E90FF;
+        color: $followBlue;
         margin-right: 10px;
       }
     }
-    .right-side-trend-top__title{
+    &__title{
       font-size: 18px;
       font-weight: 700;
       float: left;

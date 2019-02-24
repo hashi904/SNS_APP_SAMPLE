@@ -1,22 +1,22 @@
 .right-side{
   width: 290px;
   margin-right: 125px;
-  background-color: #FFFFFF;
+  background-color: $white;
   margin-top: 10px;
-  .right-side-user{
-    .right-side-user__title{
+  &-user{
+    &__title{
       padding: 10px;
       font-size: 18px;
       font-weight: 700;
     }
-    .right-side-user__content{
+    &__content{
       width: 258px;
       height: 50px;
       padding: 10px;
       clear: both;
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-      .right-side-user__content-image{
+      border-top: 1px solid $borderGray;
+      border-bottom: 1px solid $borderGray;
+      &-image{
         float: left;
         .user-image{
           width: 38px;
@@ -25,32 +25,32 @@
           transform: translate(5%,15%);
         }
       }
-      .right-side-user__content-info{
+      &-info{
         float: left;
         margin-left: 10px;
-        .right-side-user__content-info-name{
+        &-name{
           font-weight: 700;
         }
-        .right-side-user__content-info-username{
-          color: #AAAAAA;
+        &-username{
+          color: $usernameGray;
         }
       }
-      .right-side-user__content-follow{
+      &-follow{
         float: right;
-        border: 1px solid #1E90FF;
+        border: 1px solid $followBlue;
         border-radius: 10px;
         width: 80px;
         text-align: center;
         transform: translate(0%,45%);
-        .right-side-user__content-follow__button{
-          color: #1E90FF;
+        &__button{
+          color: $followBlue;
           text-align: center;
         }
       }
     }
     .right-side-user{
       padding: 10px;
-      color: #1E90FF;
+      color: $followBlue;
     }
   }
 }

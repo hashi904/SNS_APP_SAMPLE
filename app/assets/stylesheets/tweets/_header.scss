@@ -2,45 +2,45 @@
   height: 50px;
   margin-right: 125px;
   margin-left: 125px;
-  background-color: #FFFFFF;
-  .header-container{
-    .header-container--global__left{
+  background-color: $white;
+  &-container{
+    &--global__left{
       float: left;
       .global__left-home{
         display: inline-block;
         height: 30px;
         line-height: 26px;
         padding: 10px;
-        .global__left-home-menu{
+        &-menu{
           text-decoration: none;
-          color: #808080;
+          color: $iconGray;
           .header__fa-icon{}
         }
       }
       .global__left-moment{
         display: inline-block;
         padding: 10px;
-        .global__left-moment-menu{
+        &-menu{
           text-decoration: none;
-          color: #808080;
+          color: $iconGray;
           .header__fa-icon{}
         }
       }
       .global__left-news{
         display: inline-block;
         padding: 10px;
-        .global__left-news-menu{
+        &-menu{
           text-decoration: none;
-          color: #808080;
+          color: $iconGray;
           .header__fa-icon{}
         }
       }
       .global__left-message{
         display: inline-block;
         padding: 10px;
-        .global__left-message-menu{
+        &-menu{
           text-decoration: none;
-          color: #808080;
+          color: $iconGray;
           .header__fa-icon{}
         }
       }
@@ -51,15 +51,15 @@
         line-height: 26px;
         display: inline-block;
         padding: 8px 10px 10px 8px;
-        .global__right-search__input{}
+        &__input{}
       }
       .global__right-user-menu{
         display: inline-block;
         padding: 10px;
-        .global__right-user-menu__link{
+        &__link{
           text-decoration: none;
-          color: #808080;
-          .global__right-user-menu__link-img{
+          color: $iconGray;
+          &-img{
             width: 32px;
             height: 32px;
             border-radius: 50%;
@@ -70,9 +70,9 @@
       .global__right-newtweet{
         display: inline-block;
         padding: 10px;
-        .global__right-newtweet-menu{
+        &-menu{
           text-decoration: none;
-          color: #808080;
+          color: $iconGray;
         }
       }
     }
