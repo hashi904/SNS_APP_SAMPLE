@@ -1,0 +1,77 @@
+.tweet-all{
+  padding-top: 80px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #EEEEEE;
+  .tweet-box{
+    margin: 0 auto;
+    clear: both;
+    width: 600px;
+    background-color: #FFEEFF;
+    border-radius: 10px;
+
+    .tweet-box__title{
+      font-size: 22px;
+      font-weight: 700;
+      padding: 10px;
+      text-align: center;
+      background-color: #FFFFFF;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .tweet-box-main{
+      .tweet-box-main-top{
+        clear: both;
+        .tweet-box-main-top-user__img{
+          margin: 20px;
+          .tweet-box-main-top-user__img-tag{
+            float: left;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+        .tweet-box-main-top-content{
+          float: left;
+          margin-left: 35px;
+          .tweet-box-main-top-content__text_area{
+            width: 450px;
+            height: 100px;
+            font-size: 18px;
+            border-radius: 10px;
+            padding: 10px;
+            border: 2px solid #FFAAFF ;
+
+          }
+          .tweet-box-main-top-content-preview{}
+        }
+      }
+      .tweet-box-main-bottom{
+        clear: both;
+        display: flex;
+        flex-direction: row;
+        .tweet-box-main-bottom-img{
+          font-size: 30px;
+          color: #00BFFF;
+          margin: 10px 10px 10px 100px;
+        }
+        .tweet-box-main-bottom__file_field{
+          display: none;
+          margin-left: 50px;
+        }
+        .tweet-box-main-bottom__submit{
+          margin: 10px 10px 10px 350px;
+          right: 20px;
+          .tweet-box-main-bottom__submit-btn{
+            outline: 0;
+            border: 0px;
+            color: #FFFFFF;
+            background-color: #00BFFF;
+            padding: 5px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}
