@@ -1,6 +1,8 @@
-@mixin tweeticon(){
-  float: left;
-  margin-right: 100px;
+@mixin fieldBanner{
+  outline: 0;
+  border: 0px;
+  width: 300px;
+  height: 32px;
+  background-color: #f5f5f5 ;
+  border-bottom: 2px solid #00BFFF;
 }
-
-
