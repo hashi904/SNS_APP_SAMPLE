@@ -2,50 +2,40 @@
   .signin{
     padding:10px 25px 25px;
     margin: 0 auto;
-    background-color: #FFFFFF;
+    background-color: $white;
     width: 450px;
     text-align: center;
-    .signin-title{
+    &-title{
       font-size: 22px;
       font-weight: 700;
       padding: 10px;
     }
-    .signin-email{
+    &-email{
       margin: 10px;
-      .signin-email__label{
+      &__label{
         margin: 5px 40px 5px 5px;
       }
-      .signin-email__email_field{
-        outline: 0;
-        border: 0px;
-        width: 300px;
-        height: 32px;
-        background-color: #f5f5f5 ;
-        border-bottom: 2px solid #00BFFF;
+      &__email_field{
+        @include fieldBanner;
         padding: 5px;
       }
     }
     .signin-password{
       margin: 10px;
-      .signin-password__label{
+      &__label{
         margin: 5px;
       }
-      .signin-password__password_field{
-        outline: 0;
-        border: 0px;
-        width: 300px;
-        height: 32px;
-        background-color: #f5f5f5 ;
-        border-bottom: 2px solid #00BFFF;
+      &__password_field{
+        @include fieldBanner;
         padding: 5px;
       }
     }
     .signin-submit{
       margin: 10px;
-      .signin-submit__btn{
+      &__btn{
         outline: 0;
         border: 0px;
-        color: #FFFFFF;
+        color: $white;
         background-color: #00BFFF;
         padding: 5px;
         border-radius: 5px;

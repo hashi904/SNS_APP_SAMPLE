@@ -6,97 +6,72 @@
   .signup{
     padding:10px 25px 25px;
     margin: 0 auto;
-    background-color: #FFFFFF;
+    background-color: $white;
     width: 450px;
     text-align: center;
-    .signup__title{
+    &__title{
       font-size: 22px;
       font-weight: 700;
       padding: 10px;
     }
     .signup-image{
-      .signup-image-preview{
-        .siginup-image-preview__img{}
+      &-preview{
+        &__img{}
       }
       .image-upload{}
     }
     .signup-nickname{
       margin: 10px;
-      .siginup-nickname__label{
+      &__label{
         margin: 5px;
       }
-      .siginup-nickname__text_field{
-        outline: 0;
-        border: 0px;
-        width: 300px;
-        height: 32px;
-        background-color: #f5f5f5 ;
-        border-bottom: 2px solid #00BFFF;
+      &__text_field{
+        @include fieldBanner;
       }
     }
     .signup-username{
       margin: 10px;
-      .signup-username__label{
+      &__label{
         margin: 5px;
       }
-      .signup-username__text_field{
-        outline: 0;
-        border: 0px;
-        width: 300px;
-        height: 32px;
-        background-color: #f5f5f5 ;
-        border-bottom: 2px solid #00BFFF;
+      &__text_field{
+        @include fieldBanner;
       }
     }
     .signup-email{
       margin: 10px;
-      .signup-email__label{
+      &__label{
         margin: 5px;
       }
-      .signup-email__email_field{
-        outline: 0;
-        border: 0px;
-        width: 300px;
-        height: 32px;
-        background-color: #f5f5f5 ;
-        border-bottom: 2px solid #00BFFF;
+      &__email_field{
+        @include fieldBanner;
       }
     }
     .signup-password{
       margin: 10px;
-      .signup-password__label{
+      &__label{
         margin: 5px;
       }
-      .signup-password__password_field{
-        outline: 0;
-        border: 0px;
-        width: 300px;
-        height: 32px;
-        background-color: #f5f5f5 ;
-        border-bottom: 2px solid #00BFFF;
+      &__password_field{
+        @include fieldBanner;
       }
 
     }
     .signup-password-confirmation{
       margin: 10px;
-      .signup-password-confirmation__label{
+      &__label{
         margin: 5px;
       }
-      .signup-password-confirmation__password_field{
-        outline: 0;
-        border: 0px;
-        width: 300px;
-        height: 32px;
-        background-color: #f5f5f5 ;
-        border-bottom: 2px solid #00BFFF;
+      &__password_field{
+        @include fieldBanner;
       }
     }
     .signup-submit{
       margin: 10px;
-      .signup-submit__btn{
+      &__btn{
         outline: 0;
         border: 0px;
-        color: #FFFFFF;
+        color: $white;
         background-color: #00BFFF;
         padding: 5px;
         border-radius: 5px;
