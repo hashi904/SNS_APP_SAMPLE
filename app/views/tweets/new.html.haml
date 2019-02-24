@@ -1,5 +1,7 @@
-= form_for @tweet do |f|
+= form_for @tweet , url: {:action => :create} do |f|
   = flash[:danger]
   = f.text_area :text
   = f.file_field :image
+  -# 画像の保持
+  = f.hidden_field :image_cache
   = f.submit

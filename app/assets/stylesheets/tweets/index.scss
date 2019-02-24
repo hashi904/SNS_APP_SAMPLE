@@ -4,7 +4,6 @@
   width: calc(100vw-250px);
   height: 100vh;
   clear: both;
-  overflow: hidden;
   .right{
     float: right;
   }
@@ -22,6 +21,7 @@
         line-height: 50px;
         font-size: 18px;
         font-weight: 700;
+        border-bottom: 1px solid #eee;
       }
       .main-content-func-tweet{
         height: 50px;
@@ -81,6 +81,14 @@
           .main-content-tweet-user-box-text{
             width: 510px;
             clear: both;
+            overflow-wrap : break-word;
+            word-wrap : break-word;
+          }
+          .main-content-tweet-user-box-img{
+            text-align:center;
+            .main-content-tweet-user-box-img__tag{
+              width: 400px;
+            }
           }
           .main-content-tweet-user-box-func{
             .main-content-tweet-user-box-func-message{
