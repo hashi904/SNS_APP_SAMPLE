@@ -50,7 +50,7 @@
                 = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
                   = fa_icon 'upload',class: "tweet__fa-icon"
               .main-content-tweet-user-box-func-impression
-                - if tweet.user_id == current_user.id
+                - if tweet.user_id == current_user
                   = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
                     = fa_icon 'trash', class: "tweet__fa-icon"
 
