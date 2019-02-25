@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ツイッターのデザインを元にしたsnsアプリを作成しました。
 
-Things you may want to cover:
+## tweetsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|limit: 140, null: false|
+|image|string|
+|created_at|datetime|null: false|
+|updated_at|integer|null: false|
+|user_id|integer|null: false|
 
-* Ruby version
+### Association
+belongs_to :user
 
-* System dependencies
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|encrypted_password|string|null: false|
+|reset_password_token|string|
+|reset_password_sent_at|datetime|
+|remember_created_at|datetime|
+|created_at|datetime|null: false|
+|updated_at|datetime|null: false|
+|nickname|string|null: false|
+|username|string|null: false|
+|image|string|
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+has_many :tweets
