@@ -24,13 +24,29 @@
           = fa_icon 'search', class: "header__fa-icon"
         - if user_signed_in?
           %li.global__right-user-menu
-            = link_to "#" ,class: "global__right-user-menu__link" do
+            .global__right-user-menu__link
               - if current_user.image.present?
                 = image_tag(current_user.image.url, class: 'global__right-user-menu__link-img')
+                %ul.global__right-user-menu__link-pulldown
+                  %li.pulldown-prof
+                    .pulldown-prof-nickname
+                      = current_user.nickname
+                    .pulldown-prof-username
+                      = current_user.username
+                  %li
+                    = link_to "プロフィール", "#",method: :get, class: 'pulldown__link'
+                  %li
+                    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'pulldown__logout'
               - else
                 = image_tag('member_photo_noimage.png', class: 'global__right-user-menu__link-img')
-          %li.global__right-newtweet
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'global__right-newtweet-menu'
+                %ul.global__right-user-menu__link-pulldown
+                  %li.pulldown-prof
+                    .pulldown-prof-nickname
+                      = current_user.nickname
+                    .pulldown-prof-username
+                      = current_user.username
+                  %li
+                    = link_to "プロフィール", "#",method: :get, class: 'pulldown__link'
         - else
           %li.global__right-user-menu
             = link_to "Login", new_user_session_path, class: 'global__right-user-menu__link'

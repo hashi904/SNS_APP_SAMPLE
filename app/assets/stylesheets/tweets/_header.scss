@@ -59,11 +59,39 @@
         &__link{
           text-decoration: none;
           color: $iconGray;
+          z-index: 1000;
+          position: relative;
           &-img{
             width: 32px;
             height: 32px;
             border-radius: 50%;
             vertical-align: middle;
+          }
+          &-pulldown{
+            display: none;
+            position: absolute;
+            background-color: $white;
+            width: 150px;
+            box-shadow: 2px 2px;
+            padding: 5px;
+            .pulldown-prof{
+              border-bottom: 1px solid $borderGray;
+              .pulldown-prof-nickname{
+                color: $black;
+                font-size: 18px;
+                height: 30px;
+              }
+              .pulldown-prof-username{}
+            }
+            .pulldown__link{
+              text-decoration: none;
+              color: $iconGray;
+            }
+            .pulldown__logout{
+              text-decoration: none;
+              color: $iconGray;
+            }
+
           }
         }
       }
