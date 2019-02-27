@@ -12,12 +12,16 @@
         = f.label :nickname, class: 'signup-nickname__label'
         %em (12 characters maximum)
         %br/
-        = f.text_field :nickname, autofocus: true, maxlength: "12",class: 'signup-nickname__text_field'
+        = f.text_area :nickname, autofocus: true, maxlength: "12",class: 'signup-nickname__text_field'
+      .signup-nickname__count
+        文字数: 0
       .signup-username
         = f.label :username, class: 'signup-username__label'
         %em (12 characters maximum)
         %br/
-        = f.text_field :username, autofocus: true, maxlength: "12", value: "@", class: 'signup-username__text_field'
+        = f.text_area :username, autofocus: true, maxlength: "12", value: "@", class: 'signup-username__text_field'
+        .signup-username__count
+          文字数: 1
       .signup-email
         = f.label :email, class: 'signup-email__label'
         %br/
