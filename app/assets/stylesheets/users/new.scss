@@ -29,6 +29,11 @@
         @include fieldBanner;
       }
     }
+    .signup-nickname__count{
+        width: 370px;
+        text-align: right;
+        font-size: 12px;
+    }
     .signup-username{
       margin: 10px;
       &__label{
@@ -37,6 +42,11 @@
       &__text_field{
         @include fieldBanner;
       }
+    }
+    .signup-username__count{
+      width: 360px;
+      text-align: right;
+      font-size: 12px;
     }
     .signup-email{
       margin: 10px;
