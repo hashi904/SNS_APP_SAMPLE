@@ -5,12 +5,10 @@ $(document).on('turbolinks:load',function(){
         reader = new FileReader(),
         $preview = $(".signup-image-preview");
         t = this;
-
     // 画像ファイル以外の場合は何もしない
     if(file.type.indexOf("image") < 0){
       return false;
     }
-
     // ファイル読み込みが完了した際のイベント登録
     reader.onload = (function(file) {
       return function(e) {
@@ -26,7 +24,6 @@ $(document).on('turbolinks:load',function(){
               }));
       };
     })(file);
-
     reader.readAsDataURL(file);
   });
 });
