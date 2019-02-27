@@ -47,6 +47,8 @@
                       = current_user.username
                   %li
                     = link_to "プロフィール", "#",method: :get, class: 'pulldown__link'
+                  %li
+                    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'pulldown__logout'
         - else
           %li.global__right-user-menu
             = link_to "Login", new_user_session_path, class: 'global__right-user-menu__link'
