@@ -1,8 +1,9 @@
 .header{
+  width: calc(100vw-300px);
   height: 50px;
-  margin-right: 125px;
-  margin-left: 125px;
-  background-color: $white;
+  padding-left: 150px;
+  padding-right:150px;
+
   &-container{
     &--global__left{
       float: left;
@@ -45,7 +46,7 @@
         }
       }
     }
-    .header-container--global__right{
+    &--global__right{
       float: right;
       .global__right-search{
         line-height: 26px;
