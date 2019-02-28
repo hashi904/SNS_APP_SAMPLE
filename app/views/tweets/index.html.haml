@@ -4,7 +4,6 @@
   .container
     .right
       = render 'share/right-sidebar'
-      = render 'share/right-trend'
     .main
       .main-content
         .main-content__title
@@ -40,7 +39,7 @@
                   = image_tag(tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
               .main-content-tweet-user-box-func
                 .main-content-tweet-user-box-func-message
-                  = link_to "#", class: "main-content-tweet-user-box-func-message__link" do
+                  = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-message__link", method: :get do
                     = fa_icon 'comment',class: "tweet__fa-icon"
                 .main-content-tweet-user-box-retweet
                   = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
@@ -52,7 +51,7 @@
                   = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
                     = fa_icon 'upload',class: "tweet__fa-icon"
                 .main-content-tweet-user-box-func-impression
-                  - if tweet.user_id == current_user
+                  - if user_signed_in? && current_user.id== tweet.user_id
                     = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
                       = fa_icon 'trash', class: "tweet__fa-icon"
 
