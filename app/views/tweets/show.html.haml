@@ -1,0 +1,39 @@
+.all-container
+  .header-all
+    = render 'share/header'
+  .container
+    .right
+      = render 'share/right-sidebar'
+    .show-main
+      .main-content__title
+        ツイート詳細
+      .main-content-tweet
+        .main-content-tweet-user
+          - if @tweet.user.image.present?
+            = image_tag(@tweet.user.image.url, class: 'main-content-tweet-user__img')
+          - else
+            = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
+        .main-content-tweet-user-box
+          .main-content-tweet-user-box-info
+            .main-content-tweet-user-box-info-name
+              = @tweet.user.nickname
+            .main-content-tweet-user-box-info-username
+              #{@tweet.user.username}・
+            .main-content-tweet-user-box-info-time
+              = distance_of_time_in_words_to_now(@tweet.created_at)
+          .main-content-tweet-user-box-text
+            = @tweet.text
+          - if @tweet.image?
+            .main-content-tweet-user-box-img
+              = image_tag(@tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
+          .main-content-tweet-user-box-func
+            .main-content-tweet-user-box-retweet
+              = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
+                = fa_icon 'retweet',class: "tweet__fa-icon"
+            .main-content-tweet-user-box-func-favorite
+              = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
+                = fa_icon 'heart',class: "tweet__fa-icon"
+            .main-content-tweet-user-box-func-impression
+              - if user_signed_in? && current_user.id== @tweet.user_id
+                = link_to "/tweets/#{@tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
+                  = fa_icon 'trash', class: "tweet__fa-icon"
