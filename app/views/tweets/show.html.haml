@@ -27,9 +27,6 @@
             .main-content-tweet-user-box-img
               = image_tag(@tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
           .main-content-tweet-user-box-func
-            -# .main-content-tweet-user-box-retweet
-            -#   = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
-            -#     = fa_icon 'retweet',class: "tweet__fa-icon"
             .main-content-tweet-user-box-func-favorite
               = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
                 = fa_icon 'heart',class: "tweet__fa-icon"
@@ -41,33 +38,37 @@
         .main-content__comment-title
           コメント一覧
         .main-content__comment-main
-          .main-content-tweet
-            .main-content-tweet-user
-              - if @tweet.user.image.present?
-                = image_tag(@tweet.user.image.url, class: 'main-content-tweet-user__img')
-              - else
-                = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
-            .main-content-tweet-user-box
-              .main-content-tweet-user-box-info
-                .main-content-tweet-user-box-info-name
-                  = @tweet.user.nickname
-                .main-content-tweet-user-box-info-username
-                  #{@tweet.user.username}・
-                .main-content-tweet-user-box-info-time
-                  = distance_of_time_in_words_to_now(@tweet.created_at)
-              .main-content-tweet-user-box-text
-                = @tweet.text
-              - if @tweet.image?
-                .main-content-tweet-user-box-img
-                  = image_tag(@tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
+          - @comments.each do |comment|
+            .main-content-tweet
+              .main-content-tweet-user
+                - if comment.user.image.present?
+                  = image_tag(comment.user.image.url, class: 'main-content-tweet-user__img')
+                - else
+                  = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
+              .main-content-tweet-user-box
+                .main-content-tweet-user-box-info
+                  .main-content-tweet-user-box-info-name
+                    = comment.user.nickname
+                  .main-content-tweet-user-box-info-username
+                    #{comment.user.username}・
+                  .main-content-tweet-user-box-info-time
+                    = distance_of_time_in_words_to_now(comment.created_at)
+                .main-content-tweet-user-box-text
+                  = comment.comment
+                .main-content-tweet-user-box-func
+                  .main-content-tweet-user-box-func-message
+                    - if user_signed_in? && current_user.id== comment.user_id
+                      = link_to tweet_comment_path(@tweet, comment), class: "main-content-tweet-user-box-func-message__link", style: "color:#AAAAAA", method: :delete do
+                        = fa_icon 'trash', class: "tweet__fa-icon"
         .main-content__comment-create
           コメントを投稿する
-        .main-content__comment-create-box
-          .main-content__comment-create-box__user-img
-            = image_tag('member_photo_noimage.png', class: 'tweet-box-main-top-user__img-tag')
-          .main-content__comment-create-box-top
-            %textarea.main-top__comment-create-box-content__textarea
-          .main-content__comment-create-box-bottom
-            .main-content__comment-create-box-bottom-submit
-              .main-content__comment-create-box-bottom-submit__btn
-                コメントする
+        = form_for [@tweet, @comment] do |f|
+          .main-content__comment-create-box
+            = flash[:alert]
+            .main-content__comment-create-box__user-img
+              = image_tag('member_photo_noimage.png', class: 'tweet-box-main-top-user__img-tag')
+            .main-content__comment-create-box-top
+              = f.text_area :comment, class: 'main-top__comment-create-box-content__textarea'
+            .main-content__comment-create-box-bottom
+              .main-content__comment-create-box-bottom-submit
+                = f.submit 'コメントする', class: 'main-content__comment-create-box-bottom-submit__btn'
