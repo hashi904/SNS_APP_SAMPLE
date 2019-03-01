@@ -41,15 +41,15 @@
                 .main-content-tweet-user-box-func-message
                   = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-message__link", method: :get do
                     = fa_icon 'comment',class: "tweet__fa-icon"
-                .main-content-tweet-user-box-retweet
-                  = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
-                    = fa_icon 'retweet',class: "tweet__fa-icon"
+                -# .main-content-tweet-user-box-retweet
+                -#   = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
+                -#     = fa_icon 'retweet',class: "tweet__fa-icon"
                 .main-content-tweet-user-box-func-favorite
                   = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
                     = fa_icon 'heart',class: "tweet__fa-icon"
-                .main-content-tweet-user-box-func-copy
-                  = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
-                    = fa_icon 'upload',class: "tweet__fa-icon"
+                -# .main-content-tweet-user-box-func-copy
+                -#   = link_to "#", class: "main-content-tweet-user-box-func-copy__link" do
+                -#     = fa_icon 'upload',class: "tweet__fa-icon"
                 .main-content-tweet-user-box-func-impression
                   - if user_signed_in? && current_user.id== tweet.user_id
                     = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
