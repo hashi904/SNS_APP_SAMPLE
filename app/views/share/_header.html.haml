@@ -2,14 +2,14 @@
   .header-container
     %ul.header-container--global__left
       %li.global__left-home
-        = link_to "tweets/index", class: "global__left-home-menu" do
+        = link_to "/", class: "global__left-home-menu", method: :get do
           = fa_icon 'home',class: "header__fa-icon"
           ホーム
       - if user_signed_in?
         %li.global__left-moment
           = link_to "#", class: "global__left-moment-menu" do
             = fa_icon 'bolt',class: "header__fa-icon"
-            モーメント
+            about
         %li.global__left-news
           = link_to "#", class: "global__left-news-menu" do
             = fa_icon 'bell',class: "header__fa-icon"
