@@ -1,14 +1,18 @@
 .all-contents{
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #EEEEEE;
-  padding: 50px;
+  .header-all{
+    background-color: $white;
+  }
   .signup{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding:10px 25px 25px;
-    margin: 0 auto;
+    text-align: center;
     background-color: $white;
     width: 450px;
-    text-align: center;
     &__title{
       font-size: 22px;
       font-weight: 700;
@@ -48,6 +52,22 @@
       text-align: right;
       font-size: 12px;
     }
+    .signup-profile{
+      margin: 10px;
+      &__label{
+        margin: 5px;
+      }
+      &__text_field{
+        @include fieldBanner;
+        height: 145px;
+      }
+    }
+    .signup-profile__count{
+      width: 360px;
+      text-align: right;
+      font-size: 12px;
+    }
+
     .signup-email{
       margin: 10px;
       &__label{
