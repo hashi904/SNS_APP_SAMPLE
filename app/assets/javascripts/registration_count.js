@@ -10,4 +10,10 @@ $(document).on('turbolinks:load',function(){
     console.log(count);
     $('.signup-username__count').text("文字数: " + count);
   });
+
+  $('.signup-profile__text_field').keyup(function(){
+    var count = $(this).val().length;
+    console.log(count);
+    $('.signup-profile__count').text("文字数: " + count);
+  });
 });
