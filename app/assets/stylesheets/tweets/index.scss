@@ -100,6 +100,8 @@
 
                 &__link{
                   color: $usernameGray;
+                  text-decoration: none;
+                  .tweet__fa-icon{}
                 }
               }
               .main-content-tweet-user-box-retweet{

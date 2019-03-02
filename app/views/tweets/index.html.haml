@@ -41,6 +41,8 @@
                 .main-content-tweet-user-box-func-message
                   = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-message__link", method: :get do
                     = fa_icon 'comment',class: "tweet__fa-icon"
+                    - if tweet.comments.size > 0
+                      = tweet.comments.size
                 -# .main-content-tweet-user-box-retweet
                 -#   = link_to "#", class: "main-content-tweet-user-box-retweet__link" do
                 -#     = fa_icon 'retweet',class: "tweet__fa-icon"
