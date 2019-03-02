@@ -30,6 +30,14 @@ class TweetsController < ApplicationController
     redirect_to "/"
   end
 
+  def iine(user)
+    likes.create(user_id: user.id)
+  end
+
+  def uniine(user)
+    likes.find_by(user_id: user.id).destroy
+  end
+
   private
   def tweet_params
     params.require(:tweet).permit(:image, :text)
