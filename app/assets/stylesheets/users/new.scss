@@ -106,7 +106,17 @@
         padding: 5px;
         border-radius: 5px;
         margin: 10px;
-
+      }
+    }
+    .back{
+      margin: 10px;
+      .back__btn{
+        text-decoration: none;
+        outline: 0;
+        border: 0px;
+        padding: 5px;
+        margin: 10px;
+        color:$black
       }
     }
   }

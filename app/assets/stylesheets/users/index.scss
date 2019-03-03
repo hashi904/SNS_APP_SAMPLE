@@ -1,0 +1,81 @@
+.user-index-container{
+  height: 100%;
+  background-color: #EEEEEE;
+  .header-all{
+    background-color: $white;
+  }
+  .users{
+    width: 800px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px 30px 30px;
+    background-color: $white;
+    .users-title{
+      height: 50px;
+      padding: 10px;
+      left: 0px;
+      line-height: 50px;
+      font-size: 18px;
+      font-weight: 700;
+      border-bottom: 1px solid $borderGray
+    }
+    .users-main{
+      padding: 10px;
+      overflow:hidden;
+      border-bottom: 1px solid $borderGray;
+      .users-main__tag{
+        float: left;
+        margin-right: 20px;
+        .users-main__tag-img{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+      .users-main-info{
+        float: left;
+        margin-top: 3px;
+        width: 500px;
+        .users-main-info__username{
+          font-weight: 700;
+        }
+        .users-main-info__nickname{
+          color: $usernameGray;
+          font-size: 14px;
+        }
+      }
+      .users-main-main{
+        clear: both;
+        margin-left: 70px;
+        .users-main-main__prof{
+          padding: 1px;
+          font-size: 13px;
+          line-height: 20px;
+          width: 580px;
+          height: 50px;
+          float: left;
+        }
+        .users-main-main__follow{
+          float: right;
+          margin-right: 20px;
+          height: 50px;
+          margin-top: 10px;
+          .users-main-main__follow-btn{
+            text-decoration: none;
+            padding-top: 10px;
+            outline: 0;
+            border: 0px;
+            color: $white;
+            background-color: #00BFFF;
+            padding: 5px;
+            border-radius: 5px;
+            width: 70px;
+            text-align: center;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
