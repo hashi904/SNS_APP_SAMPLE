@@ -1,0 +1,96 @@
+.all-show-contents
+  .header-all
+    = render 'share/header'
+  .profile
+    .profile-top-edit
+      = link_to "編集", edit_user_registration_path ,class: "profile-top-edit__btn", method: :get
+    .profile-top
+      = image_tag('member_photo_noimage.png', class: 'profile-top-img')
+      .profile-top__nickname
+        = @user.nickname
+      .profile-top__username
+        = @user.username
+    .profile-content
+      .profile-content__sentence
+        = @user.profile
+    .profile-user-tweet
+      %ul.profile-user-tweet__title
+        %li.profile-user-tweet__title-tweet-tab.select__notice
+          ツイート一覧
+        %li.profile-user-tweet__title-follow-tab
+          フォロー
+        %li.profile-user-tweet__title-follower-tab
+          フォロワー
+        - if user_signed_in?
+          .profile-user-tweet__title-func
+            = link_to "ツイートする", "/tweets/new" ,class: "profile-user-tweet__title-func__btn", method: :get
+        .profile-user-tweet__title-func
+          .profile-user-tweet__title-func__btn
+            フォローする
+      .profile-user-tweet-main
+        .tab.profile-user-tweet-main__content
+          - @tweets.each do |tweet|
+            .main-content-tweet
+              .main-content-tweet-user
+                - if tweet.user.image.present?
+                  = image_tag(tweet.user.image.url, class: 'main-content-tweet-user__img')
+                - else
+                  = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
+              .main-content-tweet-user-box
+                .main-content-tweet-user-box-info
+                  .main-content-tweet-user-box-info-name
+                    = tweet.user.nickname
+                  .main-content-tweet-user-box-info-username
+                    #{tweet.user.username}・
+                  .main-content-tweet-user-box-info-time
+                    = distance_of_time_in_words_to_now(tweet.created_at)
+                .main-content-tweet-user-box-text
+                  = tweet.text
+                - if tweet.image?
+                  .main-content-tweet-user-box-img
+                    = image_tag(tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
+                .main-content-tweet-user-box-func
+                  .main-content-tweet-user-box-func-message
+                    = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-message__link", method: :get do
+                      = fa_icon 'comment',class: "tweet__fa-icon"
+                      - if tweet.comments.size > 0
+                        = tweet.comments.size
+                  .main-content-tweet-user-box-func-favorite
+                    = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
+                      = fa_icon 'heart',class: "tweet__fa-icon"
+                  .main-content-tweet-user-box-func-impression
+                    - if user_signed_in? && current_user.id== tweet.user_id
+                      = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
+                        = fa_icon 'trash', class: "tweet__fa-icon"
+        .tab.profile-user-tweet-main__follow
+          .profile-user-tweet-main__follow-content
+            .profile-user-tweet-main__follow-content__tag
+              = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follow-content__tag-img')
+            .profile-user-tweet-main__follow-content-info
+              .profile-user-tweet-main__follow-content-info__username
+                テストテストテストテスト
+              .profile-user-tweet-main__follow-content-info__nickname
+                @テストテスト
+            .profile-user-tweet-main__follow-content-main
+              .profile-user-tweet-main__follow-content-main-prof
+                よろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いします
+              .profile-user-tweet-main__follow-content-main-follow-tag
+                .profile-user-tweet-main__follow-content-main-follow-tag__btn
+                  フォロー
+        .tab.profile-user-tweet-main__follower
+          .profile-user-tweet-main__follower-content
+            .profile-user-tweet-main__follower-content__tag
+              = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follower-content__tag-img')
+            .profile-user-tweet-main__follower-content-info
+              .profile-user-tweet-main__follower-content-info__username
+                テストフォローワーあああ
+              .profile-user-tweet-main__follower-content-info__nickname
+                @テストフォローワーあああ
+            .profile-user-tweet-main__follower-content-main
+              .profile-user-tweet-main__follower-content-main-prof
+                よろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いします
+              .profile-user-tweet-main__follower-content-main-follow-tag
+                .profile-user-tweet-main__follower-content-main-follow-tag__btn
+                  フォロー
+
+
