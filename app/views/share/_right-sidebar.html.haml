@@ -1,40 +1,24 @@
 .right-side
   .right-side-user
     .right-side-user__title
-      他のユーザー
-    .right-side-user__content
-      .right-side-user__content-image
-        = image_tag('member_photo_noimage.png', class: 'user-image')
-      .right-side-user__content-info
-        .right-side-user__content-info-name
-          テスト
-        .right-side-user__content-info-username
-          @testtest
-      .right-side-user__content-follow
-        .right-side-user__content-follow__button
-          フォロー
-    .right-side-user__content
-      .right-side-user__content-image
-        = image_tag('member_photo_noimage.png', class: 'user-image')
-      .right-side-user__content-info
-        .right-side-user__content-info-name
-          テスト
-        .right-side-user__content-info-username
-          @testtest
-      .right-side-user__content-follow
-        .right-side-user__content-follow__button
-          フォロー
-    .right-side-user__content
-      .right-side-user__content-image
-        = image_tag('member_photo_noimage.png', class: 'user-image')
-      .right-side-user__content-info
-        .right-side-user__content-info-name
-          テスト
-        .right-side-user__content-info-username
-          @testtest
-      .right-side-user__content-follow
-        .right-side-user__content-follow__button
-          フォロー
+      おすすめのユーザー
+    - @users.each do |user|
+      .right-side-user__content
+        .right-side-user__content-image
+          = link_to "/users/#{user.id}", method: :get do
+            - if user.image.present?
+              = image_tag(user.image.url, class: 'user-image')
+            - else
+              = image_tag('member_photo_noimage.png', class: 'user-image')
+        .right-side-user__content-info
+          .right-side-user__content-info-name
+            = user.nickname
+          .right-side-user__content-info-username
+            = user.username
+        - if user_signed_in?
+          .right-side-user__content-follow
+            .right-side-user__content-follow__button
+              フォロー
     .right-side-user
-      さらに表示
+      = link_to "さらに表示", "/users", class: "right-side-user", method: :get
 
