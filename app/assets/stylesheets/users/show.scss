@@ -1,0 +1,311 @@
+.all-show-contents{
+  width: 100vw;
+  height: 1200px;
+  background-color: #EEEEEE;
+  .header-all{
+    background-color: $white;
+  }
+  .profile{
+    width: 800px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $white;
+    padding: 0px 30px 30px;
+    .profile-top-edit{
+      display: flex;
+      flex-direction: row-reverse;
+      text-align: right;
+      margin-right: 20px;
+      padding-top: 20px;
+
+      .profile-top-edit__btn{
+        text-decoration: none;
+        padding-top: 10px;
+        outline: 0;
+        border: 0px;
+        color: $white;
+        background-color: #00BFFF;
+        padding: 5px;
+        border-radius: 5px;
+        width: 40px;
+        text-align: center;
+
+      }
+    }
+  }
+  .profile-top{
+    text-align: center;
+    .profile-top-img{
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    .profile-top__nickname{
+      font-weight: 700;
+    }
+    .profile-top__username{
+      color: $usernameGray;
+    }
+  }
+  .profile-content{
+    padding-top: 10px;
+    .profile-content__sentence{}
+  }
+  .profile-user-tweet{
+    .profile-user-tweet__title{
+      width: 800px;
+      height: 50px;
+      border-bottom: 1px solid $borderGray;
+      padding: 10px;
+      .profile-user-tweet__title-tweet-tab{
+        float: left;
+        left: 0px;
+        line-height: 50px;
+        font-size: 18px;
+        margin-right: 80px;
+      }
+      .profile-user-tweet__title-follow-tab{
+        float: left;
+        left: 0px;
+        line-height: 50px;
+        font-size: 18px;
+        margin-right: 80px;
+      }
+      .profile-user-tweet__title-follower-tab{
+        float: left;
+        left: 0px;
+        line-height: 50px;
+        font-size: 18px;
+        margin-right: 80px;
+      }
+      .select__notice{
+        border-bottom: 4px solid #00BFFF;
+        font-weight: 700;
+      }
+      .profile-user-tweet__title-func{
+        float: left;
+        line-height: 50px;
+        margin-left: 20px;
+        line-height: 30px;
+        height: 30px;
+        margin-top: 5px;
+        height: 30px;
+        outline: 0;
+        border: 0px;
+        background-color: #00BFFF;
+        padding: 5px;
+        border-radius: 5px;
+        width: 100px;
+        text-align: center;
+        .profile-user-tweet__title-func__btn{
+          text-decoration: none;
+          color: $white;
+        }
+      }
+    }
+    .profile-user-tweet-main{
+      .profile-user-tweet-main__content{
+        overflow-y: scroll;
+        height: 500px;
+        .main-content-tweet{
+          overflow:hidden;
+          padding :10px;
+          border-bottom: 1px solid $borderGray;
+          .main-content-tweet-user{
+            float: left;
+            margin-right: 20px;
+            .main-content-tweet-user__img{
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+            }
+          }
+          .main-content-tweet-user-box{
+            float: left;
+            .main-content-tweet-user-box-info{
+              .main-content-tweet-user-box-info-name{
+                font-weight: 700;
+                float: left;
+              }
+              .main-content-tweet-user-box-info-username{
+                float: left;
+                color: $usernameGray;
+                margin-left: 5px;
+              }
+              .main-content-tweet-user-box-info-time{
+                float: left;
+                color: $usernameGray;
+                margin-left: 5px;
+              }
+            }
+            .main-content-tweet-user-box-text{
+              width: 510px;
+              clear: both;
+              overflow-wrap : break-word;
+              word-wrap : break-word;
+            }
+            .main-content-tweet-user-box-img{
+              text-align:center;
+              .main-content-tweet-user-box-img__tag{
+                width: 400px;
+              }
+            }
+            .main-content-tweet-user-box-func{
+              .main-content-tweet-user-box-func-message{
+                float: left;
+                margin-right: 80px;
+                .main-content-tweet-user-box-func-message__link{
+                  color: $usernameGray;
+                  .tweet__fa-icon{}
+                }
+              }
+              .main-content-tweet-user-box-func-favorite{
+                float: left;
+                margin-right: 80px;
+                .main-content-tweet-user-box-func-favorite__link{
+                  color: $usernameGray;
+                  .tweet__fa-icon{}
+                }
+              }
+              .main-content-tweet-user-box-func-impression{
+                float: left;
+                margin-right: 80px;
+                .main-content-tweet-user-box-func-impression__link{
+                  color: $usernameGray;
+                  .tweet__fa-icon{}
+                }
+              }
+            }
+          }
+        }
+      }
+      .profile-user-tweet-main__follow{
+        overflow-y: scroll;
+        height: 500px;
+        display: none;
+        .profile-user-tweet-main__follow-content{
+          padding: 10px;
+          overflow:hidden;
+          border-bottom: 1px solid $borderGray;
+          .profile-user-tweet-main__follow-content__tag{
+            float: left;
+            margin-right: 20px;
+            .profile-user-tweet-main__follow-content__tag-img{
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+            }
+          }
+          .profile-user-tweet-main__follow-content-info{
+            float: left;
+            margin-top: 3px;
+            .profile-user-tweet-main__follow-content-info__username{
+              font-weight: 700;
+            }
+            .profile-user-tweet-main__follow-content-info__nickname{
+              color: $usernameGray;
+              font-size: 14px;
+            }
+          }
+          .profile-user-tweet-main__follow-content-main{
+            clear: both;
+            margin-left: 70px;
+            .profile-user-tweet-main__follow-content-main-prof{
+              padding: 1px;
+              font-size: 13px;
+              line-height: 20px;
+              width: 580px;
+              height: 50px;
+              float: left;
+            }
+            .profile-user-tweet-main__follow-content-main-follow-tag{
+              float: right;
+              margin-right: 20px;
+              height: 50px;
+              margin-top: 10px;
+              .profile-user-tweet-main__follow-content-main-follow-tag__btn{
+                text-decoration: none;
+                padding-top: 10px;
+                outline: 0;
+                border: 0px;
+                color: $white;
+                background-color: #00BFFF;
+                padding: 5px;
+                border-radius: 5px;
+                width: 50px;
+                text-align: center;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+      .profile-user-tweet-main__follower{
+        overflow-y: scroll;
+        height: 500px;
+        display: none;
+        .profile-user-tweet-main__follower-content{
+          padding: 10px;
+          overflow:hidden;
+          border-bottom: 1px solid $borderGray;
+          .profile-user-tweet-main__follower-content__tag{
+            float: left;
+            margin-right: 20px;
+            .profile-user-tweet-main__follower-content__tag-img{
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+            }
+          }
+          .profile-user-tweet-main__follower-content-info{
+            float: left;
+            margin-top: 3px;
+            width: 500px;
+            .profile-user-tweet-main__follower-content-info__username{
+              font-weight: 700;
+            }
+            .profile-user-tweet-main__follower-content-info__nickname{
+              color: $usernameGray;
+              font-size: 14px;
+            }
+          }
+          .profile-user-tweet-main__follower-content-main{
+            clear: both;
+            margin-left: 70px;
+            .profile-user-tweet-main__follower-content-main-prof{
+              padding: 1px;
+              font-size: 13px;
+              line-height: 20px;
+              width: 580px;
+              height: 50px;
+              float: left;
+            }
+            .profile-user-tweet-main__follower-content-main-follow-tag{
+              float: right;
+              margin-right: 20px;
+              height: 50px;
+              margin-top: 10px;
+              .profile-user-tweet-main__follower-content-main-follow-tag__btn{
+                text-decoration: none;
+                padding-top: 10px;
+                outline: 0;
+                border: 0px;
+                color: $white;
+                background-color: #00BFFF;
+                padding: 5px;
+                border-radius: 5px;
+                width: 50px;
+                text-align: center;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
