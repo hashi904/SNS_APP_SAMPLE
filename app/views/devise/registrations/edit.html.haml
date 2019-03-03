@@ -1,36 +1,52 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+.all-contents
+  .header-all
+    = render 'share/header'
+  .signup
+    .signup__title
+      アカウントの編集
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+      .signup-image
+        .signup-image-preview
+        = f.file_field :image, class: 'image-upload'
+
+      .signup-nickname
+        = f.label :nickname, class: 'signup-nickname__label'
+        %em (必須, 最大12文字)
+        %br/
+        = f.text_area :nickname, autofocus: true, maxlength: "12",class: 'signup-nickname__text_field'
+      .signup-nickname__count
+        文字数:
+
+      .signup-profile
+        = f.label :profile, class: 'signup-profile__label'
+        %em (最大100文字)
+        %br/
+        = f.text_area :profile, autofocus: true, maxlength: "200", class: 'signup-profile__text_field'
+      .signup-profile__count
+        文字数:
+
+      .signup-email
+        = f.label :email, class: 'signup-email__label'
+        %br/
+        = f.email_field :email, class: 'signup-email__email_field'
+      .signup-password
+        = f.label :password, class: 'signup-password__label'
+        - if @validatable
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "off", class: 'signup-password__password_field'
+      .signup-password-confirmation
+        = f.label :password_confirmation, class: 'signup-password-confirmation__label'
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off", class: 'signup-password-confirmation__password_field'
+      .signup-submit
+        = f.submit "Update", class: 'signup-submit__btn'
+
+      -# アカウント削除ボタン
+      -# %h3 Cancel my account
+      -# %p
+        -# Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+      .back
+        = link_to "Back", :back, class: 'back__btn'
