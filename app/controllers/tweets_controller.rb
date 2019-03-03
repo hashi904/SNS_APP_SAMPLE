@@ -21,6 +21,7 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
+    @users = User.all.shuffle.first(3)
     @comments = @tweet.comments.order("created_at DESC")
     @comment = Comment.new
   end
