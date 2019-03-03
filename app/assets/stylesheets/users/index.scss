@@ -55,6 +55,8 @@
           width: 580px;
           height: 50px;
           float: left;
+          overflow-wrap : break-word;
+          word-wrap : break-word;
         }
         .users-main-main__follow{
           float: right;
