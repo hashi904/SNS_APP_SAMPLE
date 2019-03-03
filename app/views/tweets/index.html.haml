@@ -20,10 +20,11 @@
         - @tweets.each do |tweet|
           .main-content-tweet
             .main-content-tweet-user
-              - if tweet.user.image.present?
-                = image_tag(tweet.user.image.url, class: 'main-content-tweet-user__img')
-              - else
-                = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
+              = link_to "/users/#{tweet.user_id}", method: :get do
+                - if tweet.user.image.present?
+                  = image_tag(tweet.user.image.url, class: 'main-content-tweet-user__img')
+                - else
+                  = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
             .main-content-tweet-user-box
               .main-content-tweet-user-box-info
                 .main-content-tweet-user-box-info-name
