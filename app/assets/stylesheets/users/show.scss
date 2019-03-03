@@ -50,7 +50,10 @@
   }
   .profile-content{
     padding-top: 10px;
-    .profile-content__sentence{}
+    overflow-wrap : break-word;
+    word-wrap : break-word;
+    .profile-content__sentence{
+    }
   }
   .profile-user-tweet{
     .profile-user-tweet__title{
