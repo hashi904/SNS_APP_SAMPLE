@@ -34,7 +34,7 @@
                     .pulldown-prof-username
                       = current_user.username
                   %li
-                    = link_to "プロフィール", "#",method: :get, class: 'pulldown__link'
+                    = link_to "プロフィール", "users/#{current_user.id}",method: :get, class: 'pulldown__link'
                   %li
                     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'pulldown__logout'
               - else
@@ -46,7 +46,7 @@
                     .pulldown-prof-username
                       = current_user.username
                   %li
-                    = link_to "プロフィール", "#",method: :get, class: 'pulldown__link'
+                    = link_to "プロフィール", "/users/#{current_user.id}", method: :get, class: 'pulldown__link'
                   %li
                     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'pulldown__logout'
         - else
