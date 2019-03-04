@@ -28,8 +28,7 @@
               = image_tag(@tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
           .main-content-tweet-user-box-func
             .main-content-tweet-user-box-func-favorite
-              = link_to "#", class: "main-content-tweet-user-box-func-favorite__link" do
-                = fa_icon 'heart',class: "tweet__fa-icon"
+              = render 'likes/like', tweet: @tweet
             .main-content-tweet-user-box-func-impression
               - if user_signed_in? && current_user.id== @tweet.user_id
                 = link_to "/tweets/#{@tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
