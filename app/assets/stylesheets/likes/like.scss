@@ -1,0 +1,30 @@
+.favorite{
+  text-decoration: none;
+  .favorite-num{
+    float: right;
+    margin-left: 3px;
+    color: $iconGray;
+  }
+  .favorite-icon{
+    color: $iconGray;
+  }
+  &-link{
+    text-decoration: none;
+    .favorite-icon{
+      color: $iconGray;
+    }
+    .favorite-num{
+      float: right;
+      margin-left: 3px;
+      color: $iconGray;
+    }
+    .favorited-icon{
+      color: red;
+    }
+    .favorited-num{
+      float: right;
+      margin-left: 3px;
+      color: red;
+    }
+  }
+}
