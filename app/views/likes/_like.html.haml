@@ -6,12 +6,12 @@
         = Like.where(tweet_id: tweet.id).count
     - else
       - if Like.find_by(user_id: current_user.id , tweet_id: tweet.id)
-        = link_to "/likes/#{tweet.id}/destroy",class: 'favorite-link', method: "delete" do
+        = link_to "/likes/#{tweet.id}/destroy",class: 'favorite-link', method: "delete", remote: true do
           = fa_icon 'heart',class: "favorited-icon"
           .favorited-num
             = Like.where(tweet_id: tweet.id).count
       - else
-        =link_to "/likes/#{tweet.id}/create",class: 'favorite-link', method: "post" do
+        =link_to "/likes/#{tweet.id}/create",class: 'favorite-link', method: "post" ,remote: true do
           = fa_icon 'heart',class: "favorite-icon"
           .favorite-num
             = Like.where(tweet_id: tweet.id).count
