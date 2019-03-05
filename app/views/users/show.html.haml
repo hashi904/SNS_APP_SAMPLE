@@ -5,7 +5,10 @@
     .profile-top-edit
       = link_to "編集", edit_user_registration_path ,class: "profile-top-edit__btn", method: :get
     .profile-top
-      = image_tag('member_photo_noimage.png', class: 'profile-top-img')
+      - if @user.image.present?
+        = image_tag(@user.image.url, class: 'profile-top-img')
+      - else
+        = image_tag('member_photo_noimage.png', class: 'profile-top-img')
       .profile-top__nickname
         = @user.nickname
       .profile-top__username
