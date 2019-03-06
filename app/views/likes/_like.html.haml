@@ -1,4 +1,4 @@
-.favorite
+.favorite{id: "like-link-#{tweet.id}"}
   - if user_signed_in?
     - if tweet.user_id == current_user.id
       = fa_icon 'heart',class: "favorite-icon"
@@ -6,13 +6,13 @@
         = Like.where(tweet_id: tweet.id).count
     - else
       - if Like.find_by(user_id: current_user.id , tweet_id: tweet.id)
-        = link_to "/likes/#{tweet.id}/destroy",class: 'favorite-link', method: "delete" do
-          = fa_icon 'heart',class: "favorited-icon"
+        = link_to likes_destroy_path(tweet.id), class: 'favorite-link', method: :delete, data: {remote: true} do
+          = fa_icon 'heart',class: "favorited-icon", id: "favorited-icon#{tweet.id}"
           .favorited-num
             = Like.where(tweet_id: tweet.id).count
       - else
-        =link_to "/likes/#{tweet.id}/create",class: 'favorite-link', method: "post" do
-          = fa_icon 'heart',class: "favorite-icon"
+        =link_to likes_create_path(tweet.id), class: 'favorite-link', method: :post, data: {remote: true} do
+          = fa_icon 'heart',class: "favorite-icon", id: "favorited-icon#{tweet.id}"
           .favorite-num
             = Like.where(tweet_id: tweet.id).count
   - else
