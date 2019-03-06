@@ -1,0 +1,4 @@
+$("<%= @id_name %>").html('<%= escape_javascript(render("likes/like", tweet: @tweet  )) %>');
+$("<%= @id_heart %>").removeClass('favorited-icon');
+$("<%= @id_heart %>").addClass('favorite-icon');
+
