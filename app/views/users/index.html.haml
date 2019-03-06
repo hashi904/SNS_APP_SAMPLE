@@ -7,10 +7,11 @@
     - @users.each do |user|
       .users-main
         .users-main__tag
-          - if user.image.present?
-            = image_tag(user.image.url, class: 'users-main__tag-img')
-          - else
-            = image_tag('member_photo_noimage.png', class: 'users-main__tag-img')
+          = link_to "/users/#{user.id}", method: :get do
+            - if user.image.present?
+              = image_tag(user.image.url, class: 'users-main__tag-img')
+            - else
+              = image_tag('member_photo_noimage.png', class: 'users-main__tag-img')
         .users-main-info
           .users-main-info__username
             = user.nickname
@@ -23,7 +24,3 @@
             .users-main-main__follow
               .users-main-main__follow-btn
                 フォロー
-
-
-
-
