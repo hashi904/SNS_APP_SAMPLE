@@ -15,12 +15,12 @@ class TweetsController < ApplicationController
       if @following_users.present?
         @following_users.each do |user|
           tweets = Tweet.where(user_id: user.id).order(created_at: :desc)
-          if tweets != nil
+          # if tweets != nil
           #取得したユーザーの投稿一覧の格納
-            @tweets.concat(tweets)
-          end
+          @tweets.concat(tweets)
+          # end
         end
-        @tweets.sort_by{|tweet| tweet.created_at}.reverse
+        @tweets = @tweets.sort_by{|tweet| tweet.created_at}.reverse
       end
     end
 
