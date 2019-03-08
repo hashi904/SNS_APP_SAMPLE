@@ -20,6 +20,7 @@ class TweetsController < ApplicationController
           @tweets.concat(tweets)
           # end
         end
+        
         @tweets = @tweets.sort_by{|tweet| tweet.created_at}.reverse
       end
     end
