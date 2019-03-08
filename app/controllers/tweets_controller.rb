@@ -7,8 +7,9 @@ class TweetsController < ApplicationController
   def index
     if user_signed_in?
       @user = current_user
+      user_id = @user.id
       @following_users = @user.followings
-      current_user_tweets = Tweet.where('user_id' ).order(created_at: :desc)
+      current_user_tweets = Tweet.where(user_id: user_id).order(created_at: :desc)
       @tweets = []
       @tweets.concat(current_user_tweets)
       if @following_users.present?
