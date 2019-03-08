@@ -21,15 +21,20 @@
         %li.profile-user-tweet__title-tweet-tab.select__notice
           ツイート一覧
         %li.profile-user-tweet__title-follow-tab
-          フォロー
+          #{@user.followings.count} フォロー
         %li.profile-user-tweet__title-follower-tab
-          フォロワー
+          #{@user.followers.count} フォロワー
         - if user_signed_in?
           .profile-user-tweet__title-func
             = link_to "ツイートする", "/tweets/new" ,class: "profile-user-tweet__title-func__btn", method: :get
-        .profile-user-tweet__title-func
-          .profile-user-tweet__title-func__btn
-            フォローする
+        - if user_signed_in? && current_user != @user
+          - if @user.followed_by?(current_user)
+            .profile-user-tweet__title-func
+              = link_to "フォロー中",user_relationships_path(@user.id), class: 'profile-user-tweet__title-func__btn', method: :delete
+          - else
+            .profile-user-tweet__title-func
+              = link_to "フォロー", user_relationships_path(@user.id),class: 'profile-user-tweet__title-func__btn', method: :post
+
       .profile-user-tweet-main
         .tab.profile-user-tweet-main__content
           - @tweets.each do |tweet|
@@ -41,7 +46,7 @@
                   = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
               .main-content-tweet-user-box
                 .main-content-tweet-user-box-info
-                  .main-content-tweet-user-box-info-name
+                  .main-content-tweet-user-box-info-nickname
                     = tweet.user.nickname
                   .main-content-tweet-user-box-info-username
                     #{tweet.user.username}・
@@ -65,34 +70,61 @@
                       = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
                         = fa_icon 'trash', class: "tweet__fa-icon"
         .tab.profile-user-tweet-main__follow
-          .profile-user-tweet-main__follow-content
-            .profile-user-tweet-main__follow-content__tag
-              = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follow-content__tag-img')
-            .profile-user-tweet-main__follow-content-info
-              .profile-user-tweet-main__follow-content-info__username
-                テストテストテストテスト
-              .profile-user-tweet-main__follow-content-info__nickname
-                @テストテスト
-            .profile-user-tweet-main__follow-content-main
-              .profile-user-tweet-main__follow-content-main-prof
-                よろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いします
-              .profile-user-tweet-main__follow-content-main-follow-tag
-                .profile-user-tweet-main__follow-content-main-follow-tag__btn
-                  フォロー
+          - if @user.followings.present?
+            - @user.followings.each do |following_user|
+              .profile-user-tweet-main__follow-content
+                .profile-user-tweet-main__follow-content__tag
+                  - if following_user.image.present?
+                    = image_tag(following_user.image.url, class: 'profile-user-tweet-main__follow-content__tag-img')
+                  - else
+                    = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follow-content__tag-img')
+                .profile-user-tweet-main__follow-content-info
+                  .profile-user-tweet-main__follow-content-info__username
+                    = following_user.nickname
+                  .profile-user-tweet-main__follow-content-info__nickname
+                    = following_user.username
+                .profile-user-tweet-main__follow-content-main
+                  .profile-user-tweet-main__follow-content-main-prof
+                    = following_user.profile
+                  - if user_signed_in? && current_user != following_user
+                    - if @user.followed_by?(current_user)
+                      .profile-user-tweet-main__follow-content-main-follow-tag
+                        = link_to "フォロー中",user_relationships_path(@user.id), class: 'profile-user-tweet-main__follow-content-main-follow-tag__btn', method: :delete
+                    - else
+                      .profile-user-tweet-main__follow-content-main-follow-tag
+                        = link_to "フォロー", user_relationships_path(@user.id),class: 'profile-user-tweet-main__follow-content-main-follow-tag__btn', method: :post
+          - else
+            .profile-user-tweet-main__follow-content
+              .profile-user-tweet-main__follow-content__info
+                フォローなし
+
         .tab.profile-user-tweet-main__follower
-          .profile-user-tweet-main__follower-content
-            .profile-user-tweet-main__follower-content__tag
-              = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follower-content__tag-img')
-            .profile-user-tweet-main__follower-content-info
-              .profile-user-tweet-main__follower-content-info__username
-                テストフォローワーあああ
-              .profile-user-tweet-main__follower-content-info__nickname
-                @テストフォローワーあああ
-            .profile-user-tweet-main__follower-content-main
-              .profile-user-tweet-main__follower-content-main-prof
-                よろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いしますよろしくお願いします
-              .profile-user-tweet-main__follower-content-main-follow-tag
-                .profile-user-tweet-main__follower-content-main-follow-tag__btn
-                  フォロー
+          - if @user.followers.present?
+            - @user.followers.each do |follower_user|
+              .profile-user-tweet-main__follower-content
+                .profile-user-tweet-main__follower-content__tag
+                  - if follower_user.image.present?
+                    = image_tag(follower_user.image.url, class: 'profile-user-tweet-main__follower-content__tag-img')
+                  - else
+                    = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follower-content__tag-img')
+                .profile-user-tweet-main__follower-content-info
+                  .profile-user-tweet-main__follower-content-info__username
+                    = follower_user.nickname
+                  .profile-user-tweet-main__follower-content-info__nickname
+                    = follower_user.username
+                .profile-user-tweet-main__follower-content-main
+                  .profile-user-tweet-main__follower-content-main-prof
+                    = follower_user.profile
+                  - if user_signed_in? && current_user != follower_user
+                    - if @user.followed_by?(current_user)
+                      .profile-user-tweet-main__follower-content-main-follow-tag
+                        = link_to "フォロー中",user_relationships_path(@user.id), class: 'profile-user-tweet-main__follower-content-main-follow-tag__btn', method: :delete
+                    - else
+                      .profile-user-tweet-main__follower-content-main-follow-tag
+                        = link_to "フォロー", user_relationships_path(@user.id),class: 'profile-user-tweet-main__follower-content-main-follow-tag__btn', method: :post
+          - else
+            .profile-user-tweet-main__follower-content
+              .profile-user-tweet-main__follower-content__info
+                フォロワーなし
 
 

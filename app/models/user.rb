@@ -8,4 +8,20 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :profile, length: { maximum: 100 }
+
+  #フォローしているユーザーとの関連
+  has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+  #中間テーブルを介してfollowerモデルのUser(フォローされた側)を集めることを「followings」と定義
+  has_many :followings, through: :active_relationships, source: :follower
+
+  #フォローされるユーザーとの関連
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+  #中間テーブルを介してfollowingモデルのUser(フォローする側)を集めることを「followers」と定義
+  has_many :followers, through: :passive_relationships, source: :following
+
+  #Userがfollow済みかどうか判定
+  def followed_by?(user)
+    passive_relationships.find_by(following_id: user.id).present?
+  end
+
 end

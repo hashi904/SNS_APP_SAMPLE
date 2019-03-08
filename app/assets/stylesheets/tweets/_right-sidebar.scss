@@ -37,14 +37,34 @@
       }
       &-follow{
         float: right;
-        border: 1px solid $followBlue;
+        border: 1px solid #00BFFF;
         border-radius: 10px;
-        width: 80px;
+        width: 85px;
         text-align: center;
         transform: translate(0%,45%);
+        height: 26px;
+        line-height: 26px;
+        background-color: #00BFFF;
         &__button{
-          color: $followBlue;
+          color: $white;
           text-align: center;
+          text-decoration: none;
+        }
+      }
+      &-followed{
+        float: right;
+        border: 1px solid #00BFFF;
+        border-radius: 10px;
+        width: 85px;
+        text-align: center;
+        transform: translate(0%,45%);
+        height: 26px;
+        line-height: 26px;
+        background-color: $white;
+        &__button{
+          color: #00BFFF;
+          text-align: center;
+          text-decoration: none;
         }
       }
     }
