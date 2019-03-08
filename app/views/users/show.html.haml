@@ -74,10 +74,11 @@
             - @user.followings.each do |following_user|
               .profile-user-tweet-main__follow-content
                 .profile-user-tweet-main__follow-content__tag
-                  - if following_user.image.present?
-                    = image_tag(following_user.image.url, class: 'profile-user-tweet-main__follow-content__tag-img')
-                  - else
-                    = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follow-content__tag-img')
+                  = link_to "/users/#{following_user.id}", method: :get do
+                    - if following_user.image.present?
+                      = image_tag(following_user.image.url, class: 'profile-user-tweet-main__follow-content__tag-img')
+                    - else
+                      = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follow-content__tag-img')
                 .profile-user-tweet-main__follow-content-info
                   .profile-user-tweet-main__follow-content-info__username
                     = following_user.nickname
@@ -103,10 +104,11 @@
             - @user.followers.each do |follower_user|
               .profile-user-tweet-main__follower-content
                 .profile-user-tweet-main__follower-content__tag
-                  - if follower_user.image.present?
-                    = image_tag(follower_user.image.url, class: 'profile-user-tweet-main__follower-content__tag-img')
-                  - else
-                    = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follower-content__tag-img')
+                  = link_to "/users/#{follower_user.id}", method: :get do
+                    - if follower_user.image.present?
+                      = image_tag(follower_user.image.url, class: 'profile-user-tweet-main__follower-content__tag-img')
+                    - else
+                      = image_tag('member_photo_noimage.png', class: 'profile-user-tweet-main__follower-content__tag-img')
                 .profile-user-tweet-main__follower-content-info
                   .profile-user-tweet-main__follower-content-info__username
                     = follower_user.nickname
