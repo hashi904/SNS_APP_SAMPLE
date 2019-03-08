@@ -5,7 +5,24 @@ class TweetsController < ApplicationController
   end
 
   def index
-    @tweets =Tweet.order("created_at DESC")
+    if user_signed_in?
+      @user = current_user
+      @following_users = @user.followings
+      current_user_tweets = Tweet.where('user_id' ).order(created_at: :desc)
+      @tweets = []
+      @tweets.concat(current_user_tweets)
+      if @following_users.present?
+        @following_users.each do |user|
+          tweets = Tweet.where(user_id: user.id).order(created_at: :desc)
+          if tweets != nil
+          #取得したユーザーの投稿一覧の格納
+            @tweets.concat(tweets)
+          end
+        end
+        @tweets.sort_by{|tweet| tweet.created_at}.reverse
+      end
+    end
+
     @users = User.all.shuffle.first(3)
   end
 
