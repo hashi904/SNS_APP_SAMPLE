@@ -16,40 +16,43 @@
               - else
                 = image_tag('member_photo_noimage.png', class: 'main-content-func-tweet__user-img')
               = image_tag('tweet-banner.png', class: 'main-content-func-tweet__banner-img')
+        - if user_signed_in?
+          - @tweets.each do |tweet|
+            .main-content-tweet
+              .main-content-tweet-user
+                = link_to "/users/#{tweet.user_id}", method: :get do
+                  - if tweet.user.image.present?
+                    = image_tag(tweet.user.image.url, class: 'main-content-tweet-user__img')
+                  - else
+                    = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
+              .main-content-tweet-user-box
+                .main-content-tweet-user-box-info
+                  .main-content-tweet-user-box-info-name
+                    = tweet.user.nickname
+                  .main-content-tweet-user-box-info-username
+                    #{tweet.user.username}・
+                  .main-content-tweet-user-box-info-time
+                    = distance_of_time_in_words_to_now(tweet.created_at)
+                .main-content-tweet-user-box-text
+                  = tweet.text
+                - if tweet.image?
+                  .main-content-tweet-user-box-img
+                    = image_tag(tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
+                .main-content-tweet-user-box-func
+                  .main-content-tweet-user-box-func-message
+                    = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-message__link", method: :get do
+                      = fa_icon 'comment',class: "tweet__fa-icon"
+                      - if tweet.comments.size > 0
+                        = tweet.comments.size
+                  .main-content-tweet-user-box-func-favorite
+                    = render 'likes/like', tweet: tweet
+                  .main-content-tweet-user-box-func-impression
+                    - if user_signed_in? && current_user.id== tweet.user_id
+                      = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
+                        = fa_icon 'trash', class: "tweet__fa-icon"
 
-        - @tweets.each do |tweet|
-          .main-content-tweet
-            .main-content-tweet-user
-              = link_to "/users/#{tweet.user_id}", method: :get do
-                - if tweet.user.image.present?
-                  = image_tag(tweet.user.image.url, class: 'main-content-tweet-user__img')
-                - else
-                  = image_tag('member_photo_noimage.png', class: 'main-content-tweet-user__img')
-            .main-content-tweet-user-box
-              .main-content-tweet-user-box-info
-                .main-content-tweet-user-box-info-name
-                  = tweet.user.nickname
-                .main-content-tweet-user-box-info-username
-                  #{tweet.user.username}・
-                .main-content-tweet-user-box-info-time
-                  = distance_of_time_in_words_to_now(tweet.created_at)
-              .main-content-tweet-user-box-text
-                = tweet.text
-              - if tweet.image?
-                .main-content-tweet-user-box-img
-                  = image_tag(tweet.image.url, class: 'main-content-tweet-user-box-img__tag')
-              .main-content-tweet-user-box-func
-                .main-content-tweet-user-box-func-message
-                  = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-message__link", method: :get do
-                    = fa_icon 'comment',class: "tweet__fa-icon"
-                    - if tweet.comments.size > 0
-                      = tweet.comments.size
-                .main-content-tweet-user-box-func-favorite
-                  = render 'likes/like', tweet: tweet
-                .main-content-tweet-user-box-func-impression
-                  - if user_signed_in? && current_user.id== tweet.user_id
-                    = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
-                      = fa_icon 'trash', class: "tweet__fa-icon"
+        - else
+          会員登録してください
 
 
 
