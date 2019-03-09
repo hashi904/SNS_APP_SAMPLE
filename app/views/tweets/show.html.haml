@@ -33,6 +33,7 @@
               - if user_signed_in? && current_user.id== @tweet.user_id
                 = link_to "/tweets/#{@tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
                   = fa_icon 'trash', class: "tweet__fa-icon"
+
       .main-content__comment
         .main-content__comment-title
           コメント一覧
@@ -59,6 +60,9 @@
                     - if user_signed_in? && current_user.id== comment.user_id
                       = link_to tweet_comment_path(@tweet, comment), class: "main-content-tweet-user-box-func-message__link", style: "color:#AAAAAA", method: :delete do
                         = fa_icon 'trash', class: "tweet__fa-icon"
+        .main-content-tweet__pagenate
+          = paginate @comments, class: 'main-content-tweet__pagenate-tag'
+
         .main-content__comment-create
           コメントを投稿する
         = form_for [@tweet, @comment] do |f|
