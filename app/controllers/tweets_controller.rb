@@ -15,23 +15,22 @@ class TweetsController < ApplicationController
       if @following_users.present?
         @following_users.each do |user|
           tweets = Tweet.where(user_id: user.id).order(created_at: :desc)
-          # if tweets != nil
           #取得したユーザーの投稿一覧の格納
           @tweets.concat(tweets)
-          # end
         end
-        
+
         @tweets = @tweets.sort_by{|tweet| tweet.created_at}.reverse
+        @tweets = Kaminari.paginate_array(@tweets).page(params[:page]).per(20)
       end
     end
 
-    @users = User.all.shuffle.first(3)
+    @recommend_users = User.all.shuffle.first(3)
   end
 
   def create
     @tweet = Tweet.create(image: tweet_params[:image],text: tweet_params[:text], user_id: current_user.id)
     if @tweet.save
-      redirect_to "/"
+      redirect_to tweets_path
     else
       flash.now[:danger] = '文字を入力してください'
       render :new
@@ -40,15 +39,15 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
-    @users = User.all.shuffle.first(3)
-    @comments = @tweet.comments.order("created_at DESC")
+    @recommend_users = User.all.shuffle.first(3)
+    @comments = @tweet.comments.order("created_at DESC").page(params[:page]).per(20)
     @comment = Comment.new
   end
 
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy if tweet.user_id == current_user.id
-    redirect_to "/"
+    redirect_to tweets_path
   end
 
   private
