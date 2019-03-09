@@ -2,7 +2,7 @@
   .right-side-user
     .right-side-user__title
       おすすめのユーザー
-    - @users.each do |user|
+    - @recommend_users.each do |user|
       .right-side-user__content
         .right-side-user__content-image
           = link_to "/users/#{user.id}", method: :get do
@@ -24,4 +24,3 @@
               = link_to "フォロー", user_relationships_path(user.id),class: 'right-side-user__content-follow__button', method: :post
     .right-side-user
       = link_to "さらに表示", "/users", class: "right-side-user", method: :get
-

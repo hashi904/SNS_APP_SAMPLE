@@ -93,6 +93,14 @@
       background-color: $white;
     }
     .main-content__comment-main{}
+    .main-content-tweet__pagenate{
+      border-bottom: 1px solid $borderGray;
+      background-color: $white;
+      font-size: 18px;
+      height: 50px;
+      line-height: 50px;
+      .main-content-tweet__pagenate-tag{}
+    }
     .main-content__comment-create{
       height: 30px;
       padding: 10px;

@@ -27,3 +27,5 @@
             -else
               .users-main-main__follow
                 = link_to "フォロー", user_relationships_path(user.id),class: 'users-main-main__follow', method: :post
+    .main-content-tweet__pagenate
+      = paginate @users, class: 'main-content-tweet__pagenate-tag'
