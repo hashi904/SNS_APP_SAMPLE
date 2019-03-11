@@ -23,9 +23,9 @@
           - if user_signed_in? && current_user != user
             - if user.followed_by?(current_user)
               .users-main-main__followed
-                = link_to "フォロー中",user_relationships_path(user.id), class: 'users-main-main__followed', method: :delete
+                = link_to "フォロー中",user_relationships_path(user.id), class: 'users-main-main__followed-btn', method: :delete
             -else
               .users-main-main__follow
-                = link_to "フォロー", user_relationships_path(user.id),class: 'users-main-main__follow', method: :post
+                = link_to "フォロー", user_relationships_path(user.id),class: 'users-main-main__follow-btn', method: :post
     .main-content-tweet__pagenate
       = paginate @users, class: 'main-content-tweet__pagenate-tag'

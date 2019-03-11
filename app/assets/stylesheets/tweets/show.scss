@@ -17,64 +17,57 @@
     padding :10px;
     background-color: $white;
     border-bottom: 1px solid $borderGray;
-    .main-content-tweet-user{
+    &-user{
       float: left;
       margin-right: 20px;
-      .main-content-tweet-user__img{
+      &__img{
         width: 50px;
         height: 50px;
         border-radius: 50%;
       }
     }
-    .main-content-tweet-user-box{
+    &-user-box{
       float: left;
-      .main-content-tweet-user-box-info{
-        .main-content-tweet-user-box-info-name{
+      &-info{
+        &-name{
           font-weight: 700;
           float: left;
         }
-        .main-content-tweet-user-box-info-username{
+        &-username{
           float: left;
           color: $usernameGray;
           margin-left: 5px;
         }
-        .main-content-tweet-user-box-info-time{
+        &-time{
           float: left;
           color: $usernameGray;
           margin-left: 5px;
         }
       }
-      .main-content-tweet-user-box-text{
+      &-text{
         width: 510px;
         clear: both;
         overflow-wrap : break-word;
         word-wrap : break-word;
       }
-      .main-content-tweet-user-box-img{
+      &-img{
         text-align:center;
-        .main-content-tweet-user-box-img__tag{
+        &__tag{
           width: 400px;
         }
       }
-      .main-content-tweet-user-box-func{
-        .main-content-tweet-user-box-retweet{
+      &-func{
+        &-favorite{
           float: left;
           margin-right: 80px;
-          .main-content-tweet-user-box-retweet__link{
+          &__link{
             color: $usernameGray;
           }
         }
-        .main-content-tweet-user-box-func-favorite{
+        &-impression{
           float: left;
           margin-right: 80px;
-          .main-content-tweet-user-box-func-favorite__link{
-            color: $usernameGray;
-          }
-        }
-        .main-content-tweet-user-box-func-impression{
-          float: left;
-          margin-right: 80px;
-          .main-content-tweet-user-box-func-impression__link{
+          &__link{
             color: $usernameGray;
           }
         }
@@ -82,7 +75,7 @@
     }
   }
   .main-content__comment{
-    .main-content__comment-title{
+    &-title{
       height: 30px;
       padding: 10px;
       left: 0px;
@@ -92,16 +85,16 @@
       border-bottom: 1px solid $borderGray;
       background-color: $white;
     }
-    .main-content__comment-main{}
+    &-main{}
     .main-content-tweet__pagenate{
       border-bottom: 1px solid $borderGray;
       background-color: $white;
       font-size: 18px;
       height: 50px;
       line-height: 50px;
-      .main-content-tweet__pagenate-tag{}
+      &-tag{}
     }
-    .main-content__comment-create{
+    &-create{
       height: 30px;
       padding: 10px;
       left: 0px;
@@ -111,10 +104,10 @@
       border-bottom: 1px solid $borderGray;
       background-color: $white;
     }
-    .main-content__comment-create-box{
+    &-create-box{
        background-color: $white;
        padding: 10px;
-      .main-content__comment-create-box__user-img{
+      &__user-img{
         float: left;
         .tweet-box-main-top-user__img-tag{
           width: 50px;
@@ -123,7 +116,7 @@
           margin-top: 20px;
         }
       }
-      .main-content__comment-create-box-top{
+      &-top{
         .main-top__comment-create-box-content__textarea{
           margin: 20px 0px 20px 20px;
           width: 480px;
@@ -133,12 +126,12 @@
           height: 96px;
         }
       }
-      .main-content__comment-create-box-bottom{
-        .main-content__comment-create-box-bottom-submit{
+      &-bottom{
+        &-submit{
           margin: 0px 10px 10px 445px;
           right: 0px;
           text-align: center;
-          .main-content__comment-create-box-bottom-submit__btn{
+          &__btn{
             outline: 0;
             border: 0px;
             color: $white;
@@ -151,20 +144,4 @@
       }
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

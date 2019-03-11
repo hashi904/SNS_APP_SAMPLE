@@ -12,39 +12,32 @@
     margin-left: auto;
     background-color: $white;
     padding: 0px 30px 30px;
-    .profile-top-edit{
+    &-top-edit{
       display: flex;
       flex-direction: row-reverse;
       text-align: right;
       margin-right: 20px;
       padding-top: 20px;
 
-      .profile-top-edit__btn{
-        text-decoration: none;
-        padding-top: 10px;
-        outline: 0;
-        border: 0px;
-        color: $white;
-        background-color: #00BFFF;
-        padding: 5px;
-        border-radius: 5px;
-        width: 40px;
-        text-align: center;
+      &__btn{
+        @include appFrame;
+        @include appFrameBtn;
+        width: 50px;
 
       }
     }
   }
   .profile-top{
     text-align: center;
-    .profile-top-img{
+    &-img{
       width: 80px;
       height: 80px;
       border-radius: 50%;
     }
-    .profile-top__nickname{
+    &__nickname{
       font-weight: 700;
     }
-    .profile-top__username{
+    &__username{
       color: $usernameGray;
     }
   }
@@ -52,30 +45,30 @@
     padding-top: 10px;
     overflow-wrap : break-word;
     word-wrap : break-word;
-    .profile-content__sentence{
+    &__sentence{
     }
   }
   .profile-user-tweet{
-    .profile-user-tweet__title{
+    &__title{
       width: 800px;
       height: 50px;
       border-bottom: 1px solid $borderGray;
       padding: 10px;
-      .profile-user-tweet__title-tweet-tab{
+      &-tweet-tab{
         float: left;
         left: 0px;
         line-height: 50px;
         font-size: 18px;
         margin-right: 60px;
       }
-      .profile-user-tweet__title-follow-tab{
+      &-follow-tab{
         float: left;
         left: 0px;
         line-height: 50px;
         font-size: 18px;
         margin-right: 60px;
       }
-      .profile-user-tweet__title-follower-tab{
+      &-follower-tab{
         float: left;
         left: 0px;
         line-height: 50px;
@@ -86,95 +79,84 @@
         border-bottom: 4px solid #00BFFF;
         font-weight: 700;
       }
-      .profile-user-tweet__title-func{
+      &-func{
         float: left;
-        line-height: 50px;
-        margin-left: 20px;
-        line-height: 30px;
-        height: 30px;
-        margin-top: 5px;
-        height: 30px;
-        outline: 0;
-        border: 0px;
-        background-color: #00BFFF;
-        padding: 5px;
-        border-radius: 5px;
-        width: 100px;
-        text-align: center;
-        .profile-user-tweet__title-func__btn{
-          text-decoration: none;
-          color: $white;
+        margin-left: 45px;
+        margin-top: 15px;
+        @include appFrame;
+        &__btn{
+          @include appFrameBtn;
         }
       }
     }
-    .profile-user-tweet-main{
-      .profile-user-tweet-main__content{
+    &-main{
+      &__content{
         overflow-y: scroll;
         height: 500px;
         .main-content-tweet{
           overflow:hidden;
           padding :10px;
           border-bottom: 1px solid $borderGray;
-          .main-content-tweet-user{
+          &-user{
             float: left;
             margin-right: 20px;
-            .main-content-tweet-user__img{
+            &__img{
               width: 50px;
               height: 50px;
               border-radius: 50%;
             }
           }
-          .main-content-tweet-user-box{
+          &-user-box{
             float: left;
-            .main-content-tweet-user-box-info{
-              .main-content-tweet-user-box-info-nickname{
+            &-info{
+              &-nickname{
                 font-weight: 700;
                 float: left;
               }
-              .main-content-tweet-user-box-info-username{
+              &-username{
                 float: left;
                 color: $usernameGray;
                 margin-left: 5px;
               }
-              .main-content-tweet-user-box-info-time{
+              &-time{
                 float: left;
                 color: $usernameGray;
                 margin-left: 5px;
               }
             }
-            .main-content-tweet-user-box-text{
+            &-text{
               width: 510px;
               clear: both;
               overflow-wrap : break-word;
               word-wrap : break-word;
             }
-            .main-content-tweet-user-box-img{
+            &-img{
               text-align:center;
-              .main-content-tweet-user-box-img__tag{
+              &__tag{
                 width: 400px;
               }
             }
-            .main-content-tweet-user-box-func{
-              .main-content-tweet-user-box-func-message{
+            &-func{
+              &-message{
                 float: left;
                 margin-right: 80px;
-                .main-content-tweet-user-box-func-message__link{
+                &__link{
                   color: $usernameGray;
                   .tweet__fa-icon{}
                 }
               }
-              .main-content-tweet-user-box-func-favorite{
+              &-favorite{
                 float: left;
                 margin-right: 80px;
-                .main-content-tweet-user-box-func-favorite__link{
+                &__link{
                   color: $usernameGray;
                   .tweet__fa-icon{}
                 }
               }
-              .main-content-tweet-user-box-func-impression{
+              &-impression{
                 float: left;
                 margin-right: 80px;
-                .main-content-tweet-user-box-func-impression__link{
+                &__link{
                   color: $usernameGray;
                   .tweet__fa-icon{}
                 }
@@ -183,38 +165,38 @@
           }
         }
       }
-      .profile-user-tweet-main__follow{
+      &__follow{
         overflow-y: scroll;
         height: 500px;
         display: none;
-        .profile-user-tweet-main__follow-content{
+        &-content{
           padding: 10px;
           overflow:hidden;
           border-bottom: 1px solid $borderGray;
-          .profile-user-tweet-main__follow-content__tag{
+          &__tag{
             float: left;
             margin-right: 20px;
-            .profile-user-tweet-main__follow-content__tag-img{
+            &-img{
               width: 50px;
               height: 50px;
               border-radius: 50%;
             }
           }
-          .profile-user-tweet-main__follow-content-info{
+          &-info{
             float: left;
             margin-top: 3px;
-            .profile-user-tweet-main__follow-content-info__username{
+            &__username{
               font-weight: 700;
             }
-            .profile-user-tweet-main__follow-content-info__nickname{
+            &__nickname{
               color: $usernameGray;
               font-size: 14px;
             }
           }
-          .profile-user-tweet-main__follow-content-main{
+          &-main{
             clear: both;
             margin-left: 70px;
-            .profile-user-tweet-main__follow-content-main-prof{
+            &-prof{
               padding: 1px;
               font-size: 13px;
               line-height: 20px;
@@ -223,61 +205,51 @@
               float: left;
               word-wrap: break-word;
             }
-            .profile-user-tweet-main__follow-content-main-follow-tag{
+            &-follow-tag{
               float: right;
               margin-right: 20px;
-              height: 50px;
               margin-top: 10px;
-              .profile-user-tweet-main__follow-content-main-follow-tag__btn{
-                text-decoration: none;
-                padding-top: 10px;
-                outline: 0;
-                border: 0px;
-                color: $white;
-                background-color: #00BFFF;
-                padding: 5px;
-                border-radius: 5px;
-                width: 50px;
-                text-align: center;
-                font-size: 12px;
+              @include appFrame;
+              &__btn{
+                @include appFrameBtn;
               }
             }
           }
         }
       }
-      .profile-user-tweet-main__follower{
+      &__follower{
         overflow-y: scroll;
         height: 500px;
         display: none;
-        .profile-user-tweet-main__follower-content{
+        &-content{
           padding: 10px;
           overflow:hidden;
           border-bottom: 1px solid $borderGray;
-          .profile-user-tweet-main__follower-content__tag{
+          &__tag{
             float: left;
-            margin-right: 20px;
-            .profile-user-tweet-main__follower-content__tag-img{
+            margin-right: 10px;
+            &-img{
               width: 50px;
               height: 50px;
               border-radius: 50%;
             }
           }
-          .profile-user-tweet-main__follower-content-info{
+          &-info{
             float: left;
             margin-top: 3px;
             width: 500px;
-            .profile-user-tweet-main__follower-content-info__username{
+             &__username{
               font-weight: 700;
             }
-            .profile-user-tweet-main__follower-content-info__nickname{
+            &__nickname{
               color: $usernameGray;
               font-size: 14px;
             }
           }
-          .profile-user-tweet-main__follower-content-main{
+          &-main{
             clear: both;
             margin-left: 70px;
-            .profile-user-tweet-main__follower-content-main-prof{
+            &-prof{
               padding: 1px;
               font-size: 13px;
               line-height: 20px;
@@ -286,23 +258,13 @@
               float: left;
               word-wrap: break-word;
             }
-            .profile-user-tweet-main__follower-content-main-follow-tag{
+            &-follow-tag{
               float: right;
-              margin-right: 20px;
-              height: 50px;
+              margin-right: 10px;
               margin-top: 10px;
-              .profile-user-tweet-main__follower-content-main-follow-tag__btn{
-                text-decoration: none;
-                padding-top: 10px;
-                outline: 0;
-                border: 0px;
-                color: $white;
-                background-color: #00BFFF;
-                padding: 5px;
-                border-radius: 5px;
-                width: 50px;
-                text-align: center;
-                font-size: 12px;
+              @include appFrame;
+              &__btn{
+                @include appFrameBtn;
               }
             }
           }

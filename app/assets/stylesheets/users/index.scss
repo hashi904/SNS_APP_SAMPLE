@@ -11,7 +11,7 @@
     margin-left: auto;
     padding: 0px 30px 30px;
     background-color: $white;
-    .users-title{
+    &-title{
       height: 50px;
       padding: 10px;
       left: 0px;
@@ -20,35 +20,35 @@
       font-weight: 700;
       border-bottom: 1px solid $borderGray
     }
-    .users-main{
+    &-main{
       padding: 10px;
       overflow:hidden;
       border-bottom: 1px solid $borderGray;
-      .users-main__tag{
+      &__tag{
         float: left;
         margin-right: 20px;
-        .users-main__tag-img{
+        &-img{
           width: 50px;
           height: 50px;
           border-radius: 50%;
         }
       }
-      .users-main-info{
+      &-info{
         float: left;
         margin-top: 3px;
         width: 500px;
-        .users-main-info__username{
+        &__username{
           font-weight: 700;
         }
-        .users-main-info__nickname{
+        &__nickname{
           color: $usernameGray;
           font-size: 14px;
         }
       }
-      .users-main-main{
+      &-main{
         clear: both;
         margin-left: 70px;
-        .users-main-main__prof{
+        &__prof{
           padding: 1px;
           font-size: 13px;
           line-height: 20px;
@@ -58,50 +58,35 @@
           overflow-wrap : break-word;
           word-wrap : break-word;
         }
-        .users-main-main__followed{
+        &__followed{
           float: right;
-          margin-right: 10px;
-          height: 30px;
-          margin-top: 10px;
+          border: 1px solid #00BFFF;
+          border-radius: 10px;
+          width: 85px;
           text-align: center;
-          line-height: 30px;
+          height: 26px;
+          line-height: 26px;
+          background-color: #00BFFF;
           transform: translate(0%,-50%);
-          .users-main-main__followed{
-            text-decoration: none;
-            padding-top: 10px;
-            outline: 0;
-            border: 0px;
-            background-color: $white;
-            color: #00BFFF;
-            padding: 3px;
-            border-radius: 5px;
-            width: 80px;
+          &-btn{
+            color: $white;
             text-align: center;
-            font-size: 12px;
             text-decoration: none;
-             border: 1px solid #00BFFF;
           }
         }
-        .users-main-main__follow{
+        &__follow{
           float: right;
-          margin-right: 10px;
-          height: 30px;
-          margin-top: 10px;
+          border: 1px solid #00BFFF;
+          border-radius: 10px;
+          width: 85px;
           text-align: center;
-          line-height: 30px;
+          height: 26px;
+          line-height: 26px;
+          background-color: $white;
           transform: translate(0%,-50%);
-          .users-main-main__follow{
-            text-decoration: none;
-            padding-top: 10px;
-            outline: 0;
-            border: 0px;
-            color: $white;
-            background-color: #00BFFF;
-            padding: 4px;
-            border-radius: 5px;
-            width: 80px;
+          &-btn{
+            color: #00BFFF;
             text-align: center;
-            font-size: 12px;
             text-decoration: none;
           }
         }
