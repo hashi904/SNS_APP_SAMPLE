@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "likes/:tweet_id/create" , to: 'likes#create', as: 'likes_create'
   delete 'likes/:tweet_id/destroy' , to: 'likes#destroy', as: 'likes_destroy'
   root  'tweets#index'
+  get 'tweets/search' , to: 'tweets#search', as: 'search'
   resources :tweets do
     resources :comments, only: [:create, :destroy]
   end
