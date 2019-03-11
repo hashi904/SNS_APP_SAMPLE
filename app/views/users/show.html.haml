@@ -90,10 +90,10 @@
                   - if user_signed_in? && current_user != following_user
                     - if following_user.followed_by?(current_user)
                       .profile-user-tweet-main__follow-content-main-follow-tag
-                        = link_to "フォロー中",user_relationships_path(@user.id), class: 'profile-user-tweet-main__follow-content-main-follow-tag__btn', method: :delete
+                        = link_to "フォロー中",user_relationships_path(following_user.id), class: 'profile-user-tweet-main__follow-content-main-follow-tag__btn', method: :delete
                     - else
                       .profile-user-tweet-main__follow-content-main-follow-tag
-                        = link_to "フォロー", user_relationships_path(@user.id),class: 'profile-user-tweet-main__follow-content-main-follow-tag__btn', method: :post
+                        = link_to "フォロー", user_relationships_path(following_user.id),class: 'profile-user-tweet-main__follow-content-main-follow-tag__btn', method: :post
           - else
             .profile-user-tweet-main__follow-content
               .profile-user-tweet-main__follow-content__info
@@ -120,10 +120,10 @@
                   - if user_signed_in? && current_user != follower_user
                     - if follower_user.followed_by?(current_user)
                       .profile-user-tweet-main__follower-content-main-follow-tag
-                        = link_to "フォロー中",user_relationships_path(@user.id), class: 'profile-user-tweet-main__follower-content-main-follow-tag__btn', method: :delete
+                        = link_to "フォロー中",user_relationships_path(follower_user), class: 'profile-user-tweet-main__follower-content-main-follow-tag__btn', method: :delete
                     - else
                       .profile-user-tweet-main__follower-content-main-follow-tag
-                        = link_to "フォロー", user_relationships_path(@user.id),class: 'profile-user-tweet-main__follower-content-main-follow-tag__btn', method: :post
+                        = link_to "フォロー", user_relationships_path(follower_user),class: 'profile-user-tweet-main__follower-content-main-follow-tag__btn', method: :post
           - else
             .profile-user-tweet-main__follower-content
               .profile-user-tweet-main__follower-content__info

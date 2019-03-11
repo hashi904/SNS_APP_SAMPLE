@@ -40,7 +40,7 @@ class TweetsController < ApplicationController
   def show
     @tweet = Tweet.find(params[:id])
     @recommend_users = User.all.shuffle.first(3)
-    @comments = @tweet.comments.order("created_at DESC").page(params[:page]).per(20)
+    @comments = @tweet.comments.order("created_at ASC").page(params[:page]).per(15)
     @comment = Comment.new
   end
 
