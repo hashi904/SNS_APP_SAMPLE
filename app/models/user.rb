@@ -8,6 +8,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :profile, length: { maximum: 100 }
+  validates :nickname ,:username, presence: true
+  validates :username, uniqueness: true
 
   #フォローしているユーザーとの関連
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
