@@ -50,8 +50,8 @@
                     - if user_signed_in? && current_user.id== tweet.user_id
                       = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
                         = fa_icon 'trash', class: "tweet__fa-icon"
-          .main-content-tweet__pagenate
-            = paginate @tweets, class: 'main-content-tweet__pagenate-tag'
+          -# .main-content-tweet__pagenate
+          -#   = paginate @tweets, class: 'main-content-tweet__pagenate-tag'
 
         - else
           会員登録してください
