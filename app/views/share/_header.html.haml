@@ -20,8 +20,11 @@
             メッセージ
     %ul.header-container--global__right
       %li.global__right-search
-        %input.global__right-search__input{placeholder: "キーワード検索" }
-          = fa_icon 'search', class: "header__fa-icon"
+        = form_tag(search_path, :method => 'get') do
+          = text_field_tag :text ,"", placeholder: 'ツイートを検索する'
+          %button.icon-search{type:"submit"}
+            = fa_icon 'search', class: "header__fa-icon"
+
         - if user_signed_in?
           %li.global__right-user-menu
             .global__right-user-menu__link

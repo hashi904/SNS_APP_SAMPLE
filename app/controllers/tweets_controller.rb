@@ -27,6 +27,11 @@ class TweetsController < ApplicationController
     @recommend_users = User.all.shuffle.first(3)
   end
 
+  def search
+    @tweets = Tweet.search(params[:text]).order(created_at: :desc).page(params[:page]).per(20)
+    @recommend_users = User.all.shuffle.first(3)
+  end
+
   def create
     @tweet = Tweet.create(image: tweet_params[:image],text: tweet_params[:text], user_id: current_user.id)
     if @tweet.save
