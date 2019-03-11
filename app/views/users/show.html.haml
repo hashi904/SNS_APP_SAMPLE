@@ -3,7 +3,8 @@
     = render 'share/header'
   .profile
     .profile-top-edit
-      = link_to "編集", edit_user_registration_path ,class: "profile-top-edit__btn", method: :get
+      - if user_signed_in? && current_user.id == @user.id
+        = link_to "編集", edit_user_registration_path ,class: "profile-top-edit__btn", method: :get
     .profile-top
       - if @user.image.present?
         = image_tag(@user.image.url, class: 'profile-top-img')
@@ -26,7 +27,7 @@
           #{@user.followers.count} フォロワー
         - if user_signed_in?
           .profile-user-tweet__title-func
-            = link_to "ツイートする", "/tweets/new" ,class: "profile-user-tweet__title-func__btn", method: :get
+            = link_to "ツイート", "/tweets/new" ,class: "profile-user-tweet__title-func__btn", method: :get
         - if user_signed_in? && current_user != @user
           - if @user.followed_by?(current_user)
             .profile-user-tweet__title-func
@@ -66,7 +67,7 @@
                   .main-content-tweet-user-box-func-favorite
                     = render 'likes/like', tweet: tweet
                   .main-content-tweet-user-box-func-impression
-                    - if user_signed_in? && current_user.id== tweet.user_id
+                    - if user_signed_in? && current_user.id == tweet.user_id
                       = link_to "/tweets/#{tweet.id}", class: "main-content-tweet-user-box-func-impression__link" ,method: :delete do
                         = fa_icon 'trash', class: "tweet__fa-icon"
         .tab.profile-user-tweet-main__follow
