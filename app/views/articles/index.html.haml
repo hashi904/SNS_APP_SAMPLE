@@ -1,0 +1,124 @@
+.article-container
+  .header-all
+    = render 'share/header'
+  .container
+    .main
+      .main-content
+        .main-content__title
+          about
+        .main-content__chapter
+          このアプリについて
+        .main-content__text
+          %p Ruby on rails で SNSアプリケーションの開発を行いました。開発期間は15日です。
+          %p アプリケーションを開発した目的は以下の4点です。
+          %p 1．1からアプリケーションを立ち上げることが今まで学んだことの復習につながると考えた
+          %p 2．SNSの基本となるいいね機能やフォロー機能を実装してみたいと思った
+          %p 3．テストコードまで書き上げ、Ruby on railsの理解を深めたいと考えた
+          %p 4．今までに学んだことでどこまで未知の機能が実装できるか力試ししてみたいと考えた
+        %br
+
+        .main-content__chapter
+          何を使ったか
+        .main-content__small-chapter
+          ◆フロントエンド
+        %ul.main-content__text
+          %li ・haml
+          %li ・sass
+          %li ・jquery
+        .main-content__small-chapter
+          ◆サーバーサイド
+        %ul.main-content__text
+          %li ・Ruby on rails
+          %li ・Ruby
+        .main-content__small-chapter
+          ◆インフラ周り
+        %ul.main-content__text
+          %li ・aws(EC2インスタンス、S3)
+        .main-content__small-chapter
+          ◆ツール
+        %ul.main-content__text
+          %li ・Git hub
+        %br
+
+        .main-content__chapter
+          何を実装したか
+        .main-content__small-chapter
+          ◆ユーザー周り
+        %ul.main-content__text
+          %li ・ユーザー新規登録
+          %li ・ユーザーログイン
+          %li ・プロフィール画像アップロード機能
+          %li ・ユーザー情報編集機能
+
+        .main-content__small-chapter
+          ◆ツイート周り
+        %ul.main-content__text
+          %li ・投稿機能
+          %li ・画像アップロード機能
+          %li ・投稿削除機能
+          %li ・詳細表示機能
+          %li ・コメント投稿機能
+          %li ・コメント削除機能
+
+        .main-content__small-chapter
+          ◆その他
+        %ul.main-content__text
+          %li ・いいね機能
+          %li ・フォロー機能
+          %li ・検索機能
+          %li ・ページネーション
+          %li ・Rspecによるテストコード
+        %br
+
+        .main-content__chapter
+          工夫及び苦労したこと
+        .main-content__article
+          .main-content__article-chapter
+            1.画像アップロード機能
+          %p carriewaveを用いて画像アップロード機能を実装しました。その際にjqueryを用いてpreviewできるようにしました。
+          %br
+
+          .main-content__article-chapter
+            2.デバイスの拡張
+          %p application controllerを編集し、ユーザー登録できる項目とユーザー情報編集機能を追加しました。
+          %br
+
+          .main-content__article-chapter
+            3.いいね機能
+          %p いいね機能は非同期化まで実装しました。link_toからremoteを使ってcreate及びdestroアクションのjs.erbに飛ばし、非同期通信を実装しました。
+          %br
+
+          .main-content__article-chapter
+            4.フォロー機能
+          %p 工夫した点は、トップ画面における自分とフォローしているユーザーのツイートの取得です。具体的にやったことはtweets controllerのindexアクション内に自分のツイートを配列に入れ、その後フォローしているユーザーのツイートを1人づつ取り出して配列に格納し、日付順に並び替えました。
+          %p 苦労したことはユーザーのプロフィール画面に表示するフォローとフォロワーを表示するための変数を呼び間違えてしまい、すべてのユーザーをフォローから外すと自分自身をフォローしてしまうというバグが発生したことです。このバグは当初原因がわからず特定するのに苦労しました。デプロイした後に気づいたので、mysqlのコマンドを叩いたり、関連するコントローラを見たりしてバグの元を探しました。
+          %br
+
+          .main-content__article-chapter
+            5.Rspecによるテストコードの記述
+          %p アプリの基本的な機能を担保するためにuserモデルとtweetsコントローラについては単体テストを書きました。validationの抜け漏れを探すことができ、テストコードの重要性を学びました。今後は統合テストを書いていきたいと思います。
+          %br
+
+          .main-content__article-chapter
+            6.デザインに関して
+          %p 様々な機能をリンクでつなぐことを心がけました。特にユーザーが直感的に移動できるようにアイコンにリンクをつけることを意識しました。
+          %br
+        .main-content__chapter
+          まとめ
+        .main-content__article
+          .main-content__article-chapter
+            1．良かったところ
+          %p ・qiitaなどネットの記事を参考にほとんどの機能を実装することができた
+          %p ・エラーの対処法がエラーログを見る、調べるだけでなく、binding.pryを用いたりmy sqlのコマンドを打ったりと柔軟性が増した
+          %p ・テストコードに関する知見が広がり、抜け漏れを実際に見つけることができてその重要性を知った
+          %p ・勉強会でコードレビューしてもらい、コードの書き方に関する知見を深められた
+          %br
+
+        .main-content__article
+          .main-content__article-chapter
+            2．反省点
+          %p ・開発期間が当初より伸びてしまった
+          %p ・コードを改修しやすいようにもっと部分テンプレートを使えば良かった
+          %p ・view画面にrubyの記述を書きすぎ、予期せぬエラーが発生した　→ viewにはrubyのコードを極力書かないこと、コントローラでは明示的なコードを書けるように精進していきたい
+          %br
+          %br
