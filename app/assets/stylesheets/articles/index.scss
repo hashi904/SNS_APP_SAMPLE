@@ -1,0 +1,65 @@
+.article-container{
+  height: 100vw;
+  background-color: #EEEEEE;
+  .header-all{
+    background-color: $white;
+  }
+  .container{
+    width: 100vw;
+    background-color: #EEEEEE;
+    .main{
+      margin-top: 10px;
+      margin-right: 60px;
+      width: 1000px;
+      margin-right: auto;
+      margin-left: auto;
+      &-content{
+        background-color: $white;
+        &__title{
+          padding: 10px;
+          left: 0px;
+          line-height: 50px;
+          font-size: 22px;
+          font-weight: 700;
+          border-bottom: 1px solid $borderGray;
+          text-align: center;
+        }
+        &__chapter{
+          padding: 5px;
+          left: 0px;
+          line-height: 30px;
+          font-size: 20px;
+          font-weight: 700;
+          padding-left: 40px;
+        }
+        &__small-chapter{
+          padding: 5px;
+          left: 0px;
+          line-height: 30px;
+          font-size: 18px;
+          font-weight: 500;
+          padding-left: 40px;
+        }
+        &__text{
+          font-size: 16px;
+          font-weight: 100;
+          padding-left: 40px;
+          padding-right: 40px;
+          overflow-wrap : break-word;
+          word-wrap : break-word;
+        }
+        &__article{
+          padding-left: 40px;
+          padding-right: 40px;
+          overflow-wrap : break-word;
+          word-wrap : break-word;
+          &-chapter{
+            line-height: 30px;
+            font-size: 18px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
