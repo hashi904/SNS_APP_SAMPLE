@@ -96,6 +96,17 @@
         @include fieldBanner;
       }
     }
+
+    .signup-password-current{
+      margin: 10px;
+      .signup-password-current__label{
+        margin: 5px;
+      }
+      .signup-password-current__field{
+        @include fieldBanner;
+      }
+    }
+
     .signup-submit{
       margin: 10px;
       &__btn{
