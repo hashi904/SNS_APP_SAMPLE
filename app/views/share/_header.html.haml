@@ -7,17 +7,17 @@
           ホーム
       - if user_signed_in?
         %li.global__left-moment
-          = link_to "#", class: "global__left-moment-menu" do
+          = link_to articles_path, class: "global__left-moment-menu" do
             = fa_icon 'bolt',class: "header__fa-icon"
             about
-        %li.global__left-news
-          = link_to "#", class: "global__left-news-menu" do
-            = fa_icon 'bell',class: "header__fa-icon"
-            通知
-        %li.global__left-message
-          = link_to "#", class: "global__left-message-menu" do
-            = fa_icon 'envelope',class: "header__fa-icon"
-            メッセージ
+        -# %li.global__left-news
+        -#   = link_to "#", class: "global__left-news-menu" do
+        -#     = fa_icon 'bell',class: "header__fa-icon"
+        -#     通知
+        -# %li.global__left-message
+        -#   = link_to "#", class: "global__left-message-menu" do
+        -#     = fa_icon 'envelope',class: "header__fa-icon"
+        -#     メッセージ
     %ul.header-container--global__right
       %li.global__right-search
         = form_tag(search_path, :method => 'get') do
