@@ -15,12 +15,6 @@
             = user.nickname
           .right-side-user__content-info-username
             = user.username
-        - if user_signed_in? && current_user != user
-          - if user.followed_by?(current_user)
-            .right-side-user__content-followed
-              = link_to "フォロー中",user_relationships_path(user.id),class: 'right-side-user__content-followed__button', method: :delete
-          -else
-            .right-side-user__content-follow
-              = link_to "フォロー", user_relationships_path(user.id),class: 'right-side-user__content-follow__button', method: :post
+        = render partial: "/relationships/follow_btn", locals: { user: user}
     .right-side-user
       = link_to "さらに表示", "/users", class: "right-side-user", method: :get
