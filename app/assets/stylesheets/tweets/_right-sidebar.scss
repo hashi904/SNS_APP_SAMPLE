@@ -1,5 +1,5 @@
 .right-side{
-  width: 310px;
+  width: 330px;
   margin-right: 155px;
   background-color: $white;
   margin-top: 10px;
@@ -10,7 +10,7 @@
       font-weight: 700;
     }
     &__content{
-      width: 258px;
+      width: 300px;
       height: 50px;
       padding: 10px;
       clear: both;
@@ -35,7 +35,7 @@
           color: $usernameGray;
         }
       }
-      &-follow{
+      .users-main-main__followed{
         float: right;
         border: 1px solid #00BFFF;
         border-radius: 10px;
@@ -45,13 +45,13 @@
         height: 26px;
         line-height: 26px;
         background-color: #00BFFF;
-        &__button{
+        &-btn{
           color: $white;
           text-align: center;
           text-decoration: none;
         }
       }
-      &-followed{
+      .users-main-main__follow{
         float: right;
         border: 1px solid #00BFFF;
         border-radius: 10px;
@@ -61,7 +61,7 @@
         height: 26px;
         line-height: 26px;
         background-color: $white;
-        &__button{
+        &-btn{
           color: #00BFFF;
           text-align: center;
           text-decoration: none;
