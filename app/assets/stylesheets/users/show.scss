@@ -88,6 +88,24 @@
           @include appFrameBtn;
         }
       }
+      .users-main-main__followed{
+        float: right;
+        margin-right: 50px;
+        margin-top: 15px;
+        @include appFrame;
+        .users-main-main__followed-btn{
+          @include appFrameBtn;
+            }
+          }
+      .users-main-main__follow{
+        float: right;
+        margin-right: 50px;
+        margin-top: 15px;
+        @include appFrame;
+        .users-main-main__follow-btn{
+          @include appFrameBtn;
+        }
+      }
     }
     &-main{
       &__content{
@@ -205,12 +223,21 @@
               float: left;
               word-wrap: break-word;
             }
-            &-follow-tag{
+            .users-main-main__followed{
               float: right;
-              margin-right: 20px;
+              margin-right: 10px;
               margin-top: 10px;
               @include appFrame;
-              &__btn{
+              .users-main-main__followed-btn{
+                @include appFrameBtn;
+              }
+            }
+            .users-main-main__follow{
+              float: right;
+              margin-right: 10px;
+              margin-top: 10px;
+              @include appFrame;
+              .users-main-main__follow-btn{
                 @include appFrameBtn;
               }
             }
@@ -258,12 +285,21 @@
               float: left;
               word-wrap: break-word;
             }
-            &-follow-tag{
+            .users-main-main__followed{
               float: right;
               margin-right: 10px;
               margin-top: 10px;
               @include appFrame;
-              &__btn{
+              .users-main-main__followed-btn{
+                @include appFrameBtn;
+              }
+            }
+            .users-main-main__follow{
+              float: right;
+              margin-right: 10px;
+              margin-top: 10px;
+              @include appFrame;
+              .users-main-main__follow-btn{
                 @include appFrameBtn;
               }
             }
