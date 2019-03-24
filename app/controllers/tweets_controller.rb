@@ -6,10 +6,8 @@ class TweetsController < ApplicationController
 
   def index
     if user_signed_in?
-      @user = current_user
-      user_id = @user.id
-      @following_users = @user.followings
-      current_user_tweets = Tweet.where(user_id: user_id).order(created_at: :desc)
+      @following_users = current_user.followings
+      current_user_tweets = Tweet.where(user_id: current_user.id).order(created_at: :desc)
       @tweets = []
       @tweets.concat(current_user_tweets)
       if @following_users.present?
@@ -37,7 +35,6 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to tweets_path
     else
-      flash.now[:danger] = '文字を入力してください'
       render :new
     end
   end
